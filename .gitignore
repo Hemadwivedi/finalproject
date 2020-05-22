@@ -4,6 +4,7 @@
 /node_modules
 /client/node_modules
 /client/src/node_modules
+/client/src/build
 /.pnp
 .pnp.js
 
@@ -28,3 +29,4 @@ yarn-error.log*
 /.idea/
 /.vscode/
 /package-lock.json
+
