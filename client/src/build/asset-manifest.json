@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Hemadwivedi/finalproject/static/css/main.5f361e03.chunk.css",
+    "main.js": "/Hemadwivedi/finalproject/static/js/main.17fa7c22.chunk.js",
+    "main.js.map": "/Hemadwivedi/finalproject/static/js/main.17fa7c22.chunk.js.map",
+    "runtime-main.js": "/Hemadwivedi/finalproject/static/js/runtime-main.813061b8.js",
+    "runtime-main.js.map": "/Hemadwivedi/finalproject/static/js/runtime-main.813061b8.js.map",
+    "static/js/2.6f372baf.chunk.js": "/Hemadwivedi/finalproject/static/js/2.6f372baf.chunk.js",
+    "static/js/2.6f372baf.chunk.js.map": "/Hemadwivedi/finalproject/static/js/2.6f372baf.chunk.js.map",
+    "index.html": "/Hemadwivedi/finalproject/index.html",
+    "precache-manifest.d2c391e70c2af791178834ff4f44a28b.js": "/Hemadwivedi/finalproject/precache-manifest.d2c391e70c2af791178834ff4f44a28b.js",
+    "service-worker.js": "/Hemadwivedi/finalproject/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/Hemadwivedi/finalproject/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.6f372baf.chunk.js.LICENSE.txt": "/Hemadwivedi/finalproject/static/js/2.6f372baf.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/Hemadwivedi/finalproject/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.813061b8.js",
+    "static/js/2.6f372baf.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.17fa7c22.chunk.js"
+  ]
+}
