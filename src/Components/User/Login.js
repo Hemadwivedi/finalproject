@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import logInPng from '../../assets/login.png';
-import style from "../User/style.css"
+import style from "./style.css"
 class LogIn extends Component{
     login(){
         console.warn("state",this.state);
