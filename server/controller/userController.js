@@ -30,7 +30,7 @@ exports.getUserById = (req, res, next) => {
         if (user) {
             res.json(user.dataValues)
         } else {
-            res.status(401).json(err);
+            res.status(401).json("err");
         }
 
     });
@@ -62,4 +62,5 @@ exports.deleteUser = (req, res, next) => {
     }).catch(next);
 
 
-}
+};
+

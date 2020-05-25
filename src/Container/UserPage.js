@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LogIn from '../Components/User/Login';
-import Register from '../Components/User/Register';
+import LogIn from '../Components/Login/Login';
+import Register from '../Components/Register/Register';
 class UserPage extends Component {
     render(){
         return(
