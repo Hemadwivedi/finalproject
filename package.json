@@ -29,13 +29,13 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "api": "nodemon ./server/server.js",
-    "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
-  },
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test --env=jsdom",
+  "eject": "react-scripts eject",
+  "api": "nodemon ./server/server.js",
+  "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
+},
   "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": "react-app"

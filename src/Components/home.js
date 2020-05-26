@@ -1,9 +1,19 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
+
+import { Link } from 'react-router-dom';
+
 
 class Home extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
+        this.state = {
+            loadedPost: ''
+        }
+
     }
+
+
+
     render() {
         return (
             <div>
@@ -11,13 +21,13 @@ class Home extends Component {
                     <div className="imageandwelcome">
                         <img src="/assets/images/welcome.png"
                              className="girlreading"/>
-                            <h3 className="welcometext">Welcome</h3>
+                        <h3 className="welcometext">Welcome {this.props.username}</h3>
                     </div>
                     <div className="choices">
                         <h5>Would you like to add a book to sell or search through our library of books?</h5>
-                        <input name="addbook" id="addbook" className="btn add-btn" value="Add a Book"/>
-                            <input name="browsebook" id="browsebook" className="btn browsebook-btn"
-                                   value="Browse Library"/>
+                        <button type="button" className="btn btn-primary btn-lg" ><Link to="/addBook"></Link>Add Book
+                        </button>
+                        <button type="button" className="btn btn-primary btn-lg">Browse Library</button>
                     </div>
                 </div>
             </div>
@@ -26,6 +36,7 @@ class Home extends Component {
 
 
 }
+
 export default Home
 
 

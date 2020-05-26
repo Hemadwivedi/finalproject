@@ -7,7 +7,7 @@ class LogIn extends Component{
         this.state={
             email:'',
             username:''
-        }
+        };
         this.onChange=this.onChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
     }
