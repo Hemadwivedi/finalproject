@@ -16,19 +16,22 @@ constructor(){
 }
 
     componentDidMount() {
-        axios.get(`https://jsonplaceholder.typicode.com/users`)
-            .then(res => {
-                const books = res.data;
-                this.setState({ books });
+           axios.get('/:bookId')
+           .then(res => {
+            this.setState({name: res.data.name,
+            jpegIMG: res.data.jpegIMG,
+            title: res.data.title,
+            author: res.data.author,
+            description: res.data.description,
+            price: res.data.price})
             })
-    }
+            .catch(err => console.log(err))
+            }
+        }
 
-//route folder
-//book routes
-//api/book
-//look at employee
     render() {
-        return ( <div className = "card" >
+        return ( 
+        <div className = "card" >
             <div className = "img-container" >
                 <img alt = { this.state.name } src = { this.state.jpegImg } /> 
             </div> 
@@ -40,9 +43,7 @@ constructor(){
                 <li><strong > Price: </strong> {this.state.price} </li> 
                 </ul> 
             </div> 
-            <span onClick = {() => this.state.addToCart(this.state.id) } >
-            <Button variant = "warning" > Add to Cart </Button>{' '} 
-            </span> 
+
             </div>
         );
     }
@@ -51,8 +52,5 @@ constructor(){
 export default Books;
 
 
-//add an addToCart method to the App.js
-//import Books from "./components/Books";
-//render the card to page
-//component, mount, create axios, take one, then renderid (take response)
-//look at App.js
+
+
