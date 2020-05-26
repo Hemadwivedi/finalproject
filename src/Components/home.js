@@ -25,9 +25,14 @@ class Home extends Component {
                     </div>
                     <div className="choices">
                         <h5>Would you like to add a book to sell or search through our library of books?</h5>
-                        <button type="button" className="btn btn-primary btn-lg" ><Link to="/addBook"></Link>Add Book
+
+                        <button className="test">
+                            <Link to="/addBook">Add Book</Link>
                         </button>
-                        <button type="button" className="btn btn-primary btn-lg">Browse Library</button>
+                        <button className="test">
+                            <Link to="/browseBook">Browse Book</Link>
+                        </button>
+
                     </div>
                 </div>
             </div>

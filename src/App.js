@@ -8,17 +8,18 @@ import Register from './Components/Register/Register'
 import Home from './Components/home'
 import Profile from './Components/User/Profile'
 import AddBook from './Components/Book/AddBook'
+import BrowseBook from './Components/Book/BrowseBook'
 import './App.css';
 import {Redirect} from 'react-router-dom';
 
 
 class App extends Component {
     constructor(props) {
-            super(props);
+        super(props);
         this.state = {
             loggedIn: false,
             userId: null,
-            username:null
+            username: null
         }
 
         this.getUser = this.getUser.bind(this)
@@ -72,16 +73,21 @@ class App extends Component {
                         <Route exact path='/register' component={Register}/>
                         <Route exact path='/profile' component={Profile}/>
                         <Route exact path='/addBook' component={AddBook}/>
+                        <Route exact path='/browseBook'
+                               render={() => <BrowseBook updateUser={this.updateUser} userId={this.state.userId}
+                                                         username={this.state.username}/>}
+                        />
                         <Route
                             path='/home'
-                            render={() => <Home updateUser={this.updateUser} userId={this.state.userId} username ={this.state.username}/>}
+                            render={() => <Home updateUser={this.updateUser} userId={this.state.userId}
+                                                username={this.state.username}/>}
                         />
                     </div>
                 </div>
                 {this.redirect()}
             </Router>
 
-    )
+        )
     }
 
 }
