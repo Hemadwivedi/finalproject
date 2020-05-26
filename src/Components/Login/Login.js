@@ -37,6 +37,11 @@ class LogIn extends Component{
                        <div className="col-sm-5 intro-section">
                     </div>
                     <div className="col-sm-7 form-section">
+                    <div className="intro-content-wrapper">
+                <h1 className="intro-title">Welcome to BookToShare!</h1>
+                <p className="intro-text">A great place to sell a book you've already read, buy a second hand book
+                or get all your questions answered in our daily updated forum!</p>
+            </div>
                         <div className="login-wrapper">
                         <form onSubmit={this.onSubmit}>
                            <h1>Sign In</h1>

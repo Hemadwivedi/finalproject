@@ -78,6 +78,80 @@
     color: white;
 }
 
+.intro-content-wrapper{
+    width: 500px;
+    max-width: 100%;
+    margin-top: auto;
+    color:hsl(244,17,28) ;
+}
+
+.form-section{
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
 .login-wrapper-signup-text{
-    
+    font-size: 16px;
+    padding-top: 50px;
+    width: 410px;
+    max-width: 100%;
+}
+
+.intro-title{
+    color: rgb(63,61,86);
+}
+
+h1{
+    margin: 50px 50px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.intro-text{
+    margin-bottom: -10px;
+    color: rgb(63,61,86);
+}
+
+.logotext{
+    font-size: 16px;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 50px;
+}
+
+.login-wrapper{
+    width: 410px;
+    max-width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #fcfcfc;
+    height: 300px;
+    border-radius: 0.35em;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25);
+    padding: 20px;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.login-wrapper-signup-text{
+    color: rgb(63,61,86);
+    margin-left: -8px;
 }
