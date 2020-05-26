@@ -1,35 +1,37 @@
 var db = require("../models");
 
 exports.createBook = (req, res, next) => {
-
+    console.log('WE R ABOUT OT CREATE BOOK!!!', req.body)
     db.Book.create({
         title: req.body.title,
         author: req.body.author,
-        price: req.body.price,
+        price: 5.00,
         description: req.body.description,
         jpegImg: req.body.jpegImg,
-        UserId: req.user.id
+        UserId: 1
     })
-    .then(book => book.dataValues)
-    .then(result => res.json(result))
+        .then(book => book.dataValues)
+        .then(result => res.json(result))
 };
 
 exports.searchBook = (req, res, next) => {
+    console.log('about to search al lthe books!!')
     db.Book.findAll()
         .then(function (books) {
-            db.User.findByPk(req.user.id)
-                .then(user =>
-                    user.getCart()
-                        .then(cart => cart.getBooks())
-                        .then(cartBooks => cartBooks.map(b => b.id))
-                        .then(booksIdInCart => books.filter(book => !booksIdInCart.includes(book.id)))
-                ).then(filterBook => {
-                const booksData = filterBook.map(book => book.dataValues)
-                    .map(booksData => {
-                        booksData.isNotOwn = !(booksData.UserId === req.user.id);
-                        return booksData;
-                    });
-            }).then(result => res.json(result));
+            res.json(books)
+            // db.User.findById(req.user.id)
+            //     .then(user =>
+            //         user.getCart()
+            //             .then(cart => cart.getBooks())
+            //             .then(cartBooks => cartBooks.map(b => b.id))
+            //             .then(booksIdInCart => books.filter(book => !booksIdInCart.includes(book.id)))
+            //     ).then(filterBook => {
+            //         const booksData = filterBook.map(book => book.dataValues)
+            //             .map(booksData => {
+            //                 booksData.isNotOwn = !(booksData.UserId === req.user.id);
+            //                 return booksData;
+            //             });
+            //     }).then(result => res.json(result));
 
         });
 };
@@ -40,8 +42,8 @@ exports.getBookById = (req, res, next) => {
             id: req.params.bookId,
         }
     })
-    .then(book => book.dataValues)
-    .then(result => res.json(result));
+        .then(book => book.dataValues)
+        .then(result => res.json(result));
 };
 
 exports.editBook = (req, res, next) => {
@@ -53,19 +55,19 @@ exports.editBook = (req, res, next) => {
         jpegImg: req.body.jpegImg
     };
     const selector = {
-        where: {id: req.params.bookId}
+        where: { id: req.params.bookId }
     };
 
     db.Book.update(book, selector)
-        .then(rowsUpdated =>  res.json(rowsUpdated))
+        .then(rowsUpdated => res.json(rowsUpdated))
 };
 
-  exports.deleteBook = (req, res, next) => {
+exports.deleteBook = (req, res, next) => {
     const selector = {
-        where: {id: req.params.bookId}
+        where: { id: req.params.bookId }
     };
 
     db.Book.destroy(selector)
-    .then(rowsUpdated =>  res.json(rowsUpdated))
+        .then(rowsUpdated => res.json(rowsUpdated))
 };
 

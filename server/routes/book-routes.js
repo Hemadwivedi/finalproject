@@ -8,7 +8,7 @@ router.post('/create', bookController.createBook);
 
 router.get('/search', bookController.searchBook);
 
-router.get('/:bookId', bookController.getBookById);
+//router.get('/:bookId', bookController.getBookById);
 
 router.post('/:bookId', bookController.editBook);
 

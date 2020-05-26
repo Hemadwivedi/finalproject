@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import Navbar from './Components/Navbar/Navbar'
@@ -8,26 +8,41 @@ import Register from './Components/Register/Register'
 import Home from './Components/home'
 import Profile from './Components/User/Profile'
 import AddBook from './Components/Book/AddBook'
+import Library from './Components/Library'
 import './App.css';
-import {Redirect} from 'react-router-dom';
-
+import { Redirect } from 'react-router-dom';
+import BookContext from "./utils/bookContext.js";
+import Cart from './Components/Cart/cart'
 
 class App extends Component {
     constructor(props) {
-            super(props);
+        super(props);
         this.state = {
             loggedIn: false,
             userId: null,
-            username:null
+            username: null,
+            books: []
         }
 
         this.getUser = this.getUser.bind(this)
         this.componentDidMount = this.componentDidMount.bind(this)
         this.updateUser = this.updateUser.bind(this)
+        this.addBookToCart = this.addBookToCart.bind(this)
     }
 
     componentDidMount() {
         this.getUser()
+    }
+
+    addBookToCart(newBook) {
+        console.log('this is our new book', newBook)
+
+        var oldBooks = this.state.books
+        console.log('this is our old books this.state.books', oldBooks)
+
+        var newBooks = oldBooks.concat(newBook)
+        console.log('here is new books!! ewith the ne wone added!!', newBooks)
+        this.setState({ books: newBooks })
     }
 
     updateUser(userObject) {
@@ -58,30 +73,34 @@ class App extends Component {
 
     redirect() {
         if (this.state.loggedIn) {
-            return <Redirect to='/home'/>
+            return <Redirect to='/home' />
         }
     }
 
     render() {
         return (
-            <Router>
-                <div className="App">
-                    <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
-                    <div className='container'>
-                        <Route exact path='/' component={Login}/>
-                        <Route exact path='/register' component={Register}/>
-                        <Route exact path='/profile' component={Profile}/>
-                        <Route exact path='/addBook' component={AddBook}/>
-                        <Route
-                            path='/home'
-                            render={() => <Home updateUser={this.updateUser} userId={this.state.userId} username ={this.state.username}/>}
-                        />
+            <BookContext.Provider value={this.state}>
+                <Router>
+                    <div className="App">
+                        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+                        <div className='container'>
+                            <Route exact path='/' component={Login} />
+                            <Route exact path='/register' component={Register} />
+                            <Route exact path='/profile' component={Profile} />
+                            <Route exact path='/addBook' component={AddBook} />
+                            <Route exact path='/library' render={() => <Library addBookToCart={this.addBookToCart} />} />
+                            <Route exact path='/cart' component={Cart} />
+                            <Route
+                                path='/home'
+                                render={() => <Home updateUser={this.updateUser} userId={this.state.userId} username={this.state.username} />}
+                            />
+                        </div>
                     </div>
-                </div>
-                {this.redirect()}
-            </Router>
+                    {/*this.redirect()*/}
+                </Router>
+            </BookContext.Provider>
 
-    )
+        )
     }
 
 }

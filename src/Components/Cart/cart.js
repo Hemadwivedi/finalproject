@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import BookContext from '../../utils/bookContext'
 
 function Cart() {
+    const context = useContext(BookContext);
+    console.log('THIS IS CONTEXt in the cart should have the books', context)
     return (
         <div class="cartcontent">
-
+            {context.books.map((book) => {
+                return (
+                    <h1>{book.title}</h1>
+                )
+            })}
             <div class="navbar">
                 <ul>
                     <li id="home">Home</li>
