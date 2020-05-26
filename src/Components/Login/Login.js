@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import login from './LogInUser';
+import './Login.css'
+// import logimg from '../../assets/login.png'
 
 class LogIn extends Component{
     constructor(props){
@@ -34,9 +36,12 @@ class LogIn extends Component{
                <div>
                    <div>
                        <form onSubmit={this.onSubmit}>
-                           <h1>Please Sign In This Page</h1>
+                       <div className="col-sm-5 intro-section">
+                        {/* <img src={logimg}/> */}
+                    </div>
+                           <h1>Please Sign In</h1>
                            <div>
-                               <label htmlFor='username'>username</label>
+                               <label className="loguser" htmlFor='username'>Username</label>
                                <input type='username' name='username' placeholder='Enter UserName' value={this.state.username}
                                       onChange={this.onChange}/>
                            </div>
