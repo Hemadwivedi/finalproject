@@ -21,7 +21,7 @@ function Cart() {
                 <h2 class="yourcart"> Your Cart! </h2>
             </div>
             <div class="checkoutbtndiv">
-                <a href="mailto:thomas1jmccarthy@gmail.com"><input id="checkout" class="btn checkout-btn" value="Checkout" /></a>
+                <input id="checkout" class="btn checkout-btn" value="Checkout" />
             </div>
 
             <div class="allbooksdisplayed">
