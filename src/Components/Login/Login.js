@@ -32,29 +32,28 @@ class LogIn extends Component{
 
     render(){
         return(
-           <div>
-               <div>
-                   <div>
-                       <form onSubmit={this.onSubmit}>
+           <div className="container-fluid">
+               <div className="row">
                        <div className="col-sm-5 intro-section">
-                        {/* <img src={logimg}/> */}
                     </div>
-                           <h1>Please Sign In</h1>
+                    <div className="col-sm-7 form-section">
+                        <div className="login-wrapper">
+                        <form onSubmit={this.onSubmit}>
+                           <h1>Sign In</h1>
                            <div>
-                               <label className="loguser" htmlFor='username'>Username</label>
-                               <input type='username' name='username' placeholder='Enter UserName' value={this.state.username}
+                               <input className="form-control" type='username' name='username' placeholder='Enter Username' value={this.state.username}
                                       onChange={this.onChange}/>
                            </div>
                            <div>
-                               <label htmlFor='password'>Password</label>
-                               <input type='password' name='password' placeholder='Enter Password' value={this.state.password}
+                               <input className="form-control" type='password' name='password' placeholder='Enter Password' value={this.state.password}
                                       onChange={this.onChange}/>
                            </div>
-                           <button type='submit'> Sign In</button>
+                           <button className="btn btn-default login-btn" type='submit'> Sign In</button>
                            <p className="login-wrapper-signup-text">New to this website? <a href="/register">Signup
                                here</a></p>
                        </form>
-                   </div>
+                       </div>
+                    </div>
                </div>
            </div>
         )
