@@ -1,10 +1,14 @@
 import React,{Component} from 'react';
 import logInPng from '../../assets/login.png';
-import style from "../User/style.css"
+import style from "./style.css"
+import Axios from 'axios';
 class LogIn extends Component{
     login(){
         console.warn("state",this.state);
         //alert("login working")
+    }
+    componentDidMount(){
+        Axios.get("/api/login")
     }
     constructor(props){
         super(props);
