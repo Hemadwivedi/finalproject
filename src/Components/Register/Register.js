@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import loginImg from "../../assets/login.png";
+// import loginImg from "../../assets/login.png";
 import RegisterUser from "./RegisterUser";
 import login from '../Login/LogInUser';
+import './Register.css'
 
 
 class Register extends Component {
@@ -41,47 +42,39 @@ class Register extends Component {
 
     render() {
         return (
-            <div className="base-container">
-                <div className="header">Register</div>
-                <div className="content">
-                    <div className="image">
-                        <img src={loginImg}/>
-                    </div>
-                    <form onSubmit={this.onSubmit}>
-                        <div className="form">
-
-                            <div className="form-group">
-                                <label htmlFor="firstname">FirstName</label>
-                                <input type="text" name="firstname"
-                                       placeholder="firstname"
+            <div className="contentholder">
+                <div className="signup-wrapper">
+                <h2 className="login-title">Register</h2>
+                    <form className="signup" onSubmit={this.onSubmit}>
+                                <div className="form-group">
+                                <label className="sr-only" htmlFor="firstname">First name</label>
+                                <input className="form-control" type="text" name="First Name"
+                                       placeholder="First Name"
                                        value={this.state.firstname}
                                        onChange={this.onChange}/>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="lastname">LastName</label>
-                                <input type="text" name="lastname"
-                                       placeholder="lastname"
+                                <label className="sr-only" htmlFor="lastname">Last Name</label>
+                                <input className="form-control" type="text" name="Last Name"
+                                       placeholder="Last Name"
                                        value={this.state.lastname}
                                        onChange={this.onChange}/>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="username">UserName</label>
-                                <input type="text" name="username" placeholder="username"
+                                <label className="sr-only" htmlFor="username">Username</label>
+                                <input className="form-control" type="text" name="username" placeholder="Username"
                                        value={this.state.username}
                                        onChange={this.onChange}/>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="password">Password</label>
-                                <input type="password" name="password" placeholder="password"
+                                <label className="sr-only" htmlFor="password">Password</label>
+                                <input className="form-control" type="password" name="password" placeholder="Password"
                                        value={this.state.password}
                                        onChange={this.onChange}/>
                             </div>
-                        </div>
-                        <div className="footer">
-                            <button type="submit" className="btn">
-                                Register
-                            </button>
-                        </div>
+                            <div className="d-flex justify-content-between align-items-center mb-5">
+                <input name="signup" id="signup" className="btn signup-btn" type="submit" value="Sign Up"></input>
+                            </div>
                     </form>
                 </div>
             </div>
