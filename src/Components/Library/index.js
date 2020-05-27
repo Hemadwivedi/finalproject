@@ -15,7 +15,7 @@ class Library extends Component {
     componentDidMount() {
         var self = this
         Axios.get('/api/book/search').then(function (data) {
-            console.log('we got the books from the backedn!!', data)
+            console.log('we got the books from the backend!!', data)
             self.setState({ books: data.data })
         })
     }
