@@ -5,16 +5,20 @@ import axios from 'axios';
 import Navbar from './Components/Navbar/Navbar'
 import Login from './Components/Login/Login'
 import Register from './Components/Register/Register'
-import home from './Components/home'
+import Home from './Components/home'
 import Profile from './Components/User/Profile'
+import AddBook from './Components/Book/AddBook'
+import BrowseBook from './Components/Book/BrowseBook'
 import './App.css';
-import {Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom';
+
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             loggedIn: false,
+            userId: null,
             username: null
         }
 
@@ -40,13 +44,14 @@ class App extends Component {
 
                 this.setState({
                     loggedIn: true,
+                    userId: response.data.user.id,
                     username: response.data.user.username
                 })
             } else {
                 console.log('Get user: no user');
                 this.setState({
                     loggedIn: false,
-                    username: null
+                    user: null
                 })
             }
         })
@@ -62,19 +67,27 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-
                     <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
                     <div className='container'>
                         <Route exact path='/' component={Login}/>
                         <Route exact path='/register' component={Register}/>
                         <Route exact path='/profile' component={Profile}/>
-                        <Route exact path='/home' component={home}/>
+                        <Route exact path='/addBook' component={AddBook}/>
+                        <Route exact path='/browseBook'
+                               render={() => <BrowseBook updateUser={this.updateUser} userId={this.state.userId}
+                                                         username={this.state.username}/>}
+                        />
+                        <Route
+                            path='/home'
+                            render={() => <Home updateUser={this.updateUser} userId={this.state.userId}
+                                                username={this.state.username}/>}
+                        />
                     </div>
                 </div>
                 {this.redirect()}
             </Router>
 
-    )
+        )
     }
 
 }

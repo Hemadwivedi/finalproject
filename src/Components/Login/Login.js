@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import login from './LogInUser';
+import './Login.css'
+// import logimg from '../../assets/login.png'
 
 class LogIn extends Component{
     constructor(props){
@@ -7,7 +9,7 @@ class LogIn extends Component{
         this.state={
             email:'',
             username:''
-        }
+        };
         this.onChange=this.onChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
     }
@@ -30,26 +32,33 @@ class LogIn extends Component{
 
     render(){
         return(
-           <div>
-               <div>
-                   <div>
-                       <form onSubmit={this.onSubmit}>
-                           <h1>Please Sign In This Page</h1>
+           <div className="container-fluid">
+               <div className="row">
+                       <div className="col-sm-5 intro-section">
+                    </div>
+                    <div className="col-sm-7 form-section">
+                    <div className="intro-content-wrapper">
+                <h1 className="intro-title">Welcome to BookToShare!</h1>
+                <p className="intro-text">A great place to sell a book you've already read, buy a second hand book
+                or get all your questions answered in our daily updated forum!</p>
+            </div>
+                        <div className="login-wrapper">
+                        <form onSubmit={this.onSubmit}>
+                           <h1>Sign In</h1>
                            <div>
-                               <label htmlFor='username'>username</label>
-                               <input type='username' name='username' placeholder='Enter UserName' value={this.state.username}
+                               <input className="form-control" type='username' name='username' placeholder='Enter Username' value={this.state.username}
                                       onChange={this.onChange}/>
                            </div>
                            <div>
-                               <label htmlFor='password'>Password</label>
-                               <input type='password' name='password' placeholder='Enter Password' value={this.state.password}
+                               <input className="form-control" type='password' name='password' placeholder='Enter Password' value={this.state.password}
                                       onChange={this.onChange}/>
                            </div>
-                           <button type='submit'> Sign In</button>
+                           <button className="btn btn-default login-btn" type='submit'> Sign In</button>
                            <p className="login-wrapper-signup-text">New to this website? <a href="/register">Signup
                                here</a></p>
                        </form>
-                   </div>
+                       </div>
+                    </div>
                </div>
            </div>
         )

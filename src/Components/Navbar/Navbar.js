@@ -1,16 +1,33 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import { createBrowserHistory } from "history";
+import login from "../Login/LogInUser";
+
+
 
 class Navbar extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.logout = this.logout.bind(this);
+    }
+    onSubmit(e){
+        e.preventDefault();
+
+        axios.get('/api/logout').then(res=>{
+            if(res){
+                this.history.push('/home');
+            }
+        })
     }
 
     logout(event) {
         event.preventDefault();
-        localStorage.removeItem('userToken');
-        this.props.history.push('/')
+        axios.get('/api/logout').then(response=> {
+
+                this.props.history.push('/');
+
+        } )
     }
 
 
@@ -35,10 +52,8 @@ class Navbar extends Component {
                                         <Link to="/library">
                                             <span>Library</span>
                                         </Link>
-                                        <Link to="/logout">
-                                            <span>Log out</span>
-                                        </Link>
-                                        <Link onClick={this.logout}>
+
+                                        <Link onClick={this.onSubmit}>
                                             <span>logout</span></Link>
                                     </section>) :
                                 (

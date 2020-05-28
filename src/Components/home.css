@@ -1,0 +1,41 @@
+body {
+    font-family: 'Muli', sans-serif;
+    color: rgb(70, 69, 91);
+}
+
+.membercontent {
+    height: 100vh;
+}
+
+.imageandwelcome {
+    vertical-align: top;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcometext,
+.member-name {
+    color: rgb(70, 69, 91)
+}
+
+.choices {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.test {
+    padding: 17px 20px 16px 21px;
+    border-radius: 4px;
+    background-color: goldenrod;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    line-height: 20px;
+    margin-top: 50px;
+}
+
+.test:hover {
+    color: white;
+    margin-top: 50px;
+}

@@ -1,23 +1,38 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
+import './home.css'
+import { Link } from 'react-router-dom';
+
 
 class Home extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
+        this.state = {
+            loadedPost: ''
+        }
+
     }
+
+
+
     render() {
         return (
             <div>
                 <div className="membercontent">
                     <div className="imageandwelcome">
-                        <img src="/assets/images/welcome.png"
+                        <img src="../assets/images/welcome.png"
                              className="girlreading"/>
-                            <h3 className="welcometext">Welcome</h3>
+                        <h3 className="welcometext">Welcome {this.props.username}</h3>
                     </div>
                     <div className="choices">
                         <h5>Would you like to add a book to sell or search through our library of books?</h5>
-                        <input name="addbook" id="addbook" className="btn add-btn" value="Add a Book"/>
-                            <input name="browsebook" id="browsebook" className="btn browsebook-btn"
-                                   value="Browse Library"/>
+
+                        <button className="test">
+                            <Link to="/addBook">Add Book</Link>
+                        </button>
+                        <button className="test">
+                            <Link to="/browseBook">Browse Book</Link>
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -26,6 +41,7 @@ class Home extends Component {
 
 
 }
+
 export default Home
 
 
