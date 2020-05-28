@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 const userController = require('../controller/userController');
 
-router.get('/search', userController.getAllUsers);
+router.get('/search', isAuthenticated, userController.getAllUsers);
 router.post('/create', userController.createUser);
 
-router.get('/:userId', userController.getUserById);
-router.post('/:userId', userController.editUser);
-router.delete('/:userId', userController.deleteUser);
+router.get('/:userId', isAuthenticated, userController.getUserById);
+router.post('/:userId', isAuthenticated, userController.editUser);
+router.delete('/:userId', isAuthenticated, userController.deleteUser);
 
 router.get('/', (req, res, next) => {
     console.log('===== user!!======')

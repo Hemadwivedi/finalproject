@@ -9,6 +9,7 @@ import login from "../Login/LogInUser";
 class Navbar extends Component {
     constructor(props) {
         super(props);
+        this.state= {}
         this.logout = this.logout.bind(this);
     }
     onSubmit(e){
@@ -16,7 +17,9 @@ class Navbar extends Component {
 
         axios.get('/api/logout').then(res=>{
             if(res){
-                this.history.push('/home');
+                this.setState({
+                    redirectTo: '/'
+                })
             }
         })
     }

@@ -41,7 +41,6 @@ class App extends Component {
             console.log(response.data)
             if (response.data.user) {
                 console.log('Get User: There is a user saved in the server session: ')
-
                 this.setState({
                     loggedIn: true,
                     userId: response.data.user.id,
@@ -69,7 +68,8 @@ class App extends Component {
                 <div className="App">
                     <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
                     <div className='container'>
-                        <Route exact path='/' component={Login}/>
+                        <Route exact path='/'
+                               render={() => <Login updateUser={this.updateUser}/>}/>
                         <Route exact path='/register' component={Register}/>
                         <Route exact path='/profile' component={Profile}/>
                         <Route exact path='/addBook' component={AddBook}/>

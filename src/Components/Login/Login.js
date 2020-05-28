@@ -25,7 +25,14 @@ class LogIn extends Component{
       };
       login(user).then(res=>{
        if(res){
-           this.props.history.push('/home');
+           this.props.updateUser({
+               loggedIn: true,
+               userId: res.id,
+               username: res.username
+           });
+           this.setState({
+               redirectTo: '/home'
+           })
        }
       })
     }

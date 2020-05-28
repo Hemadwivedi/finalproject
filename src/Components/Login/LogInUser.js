@@ -7,7 +7,6 @@ const LogInUser = (connectUser) => {
         username: connectUser.username,
         password: connectUser.password
     }).then(response => {
-        localStorage.setItem('userToken', response.data);
         return response.data;
     }).catch(err => {
         console.log(err);

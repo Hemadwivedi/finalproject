@@ -10,8 +10,8 @@ exports.createBook = (req, res, next) => {
         jpegImg: req.body.jpegImg,
         UserId: req.user.id
     })
-    .then(book => book.dataValues)
-    .then(result => res.json(result))
+        .then(book => book.dataValues)
+        .then(result => res.json(result))
 };
 
 exports.searchBook = (req, res, next) => {
@@ -29,6 +29,7 @@ exports.searchBook = (req, res, next) => {
                         booksData.isNotOwn = !(booksData.UserId === req.user.id);
                         return booksData;
                     });
+                return booksData
             }).then(result => res.json(result));
 
         });
@@ -40,8 +41,8 @@ exports.getBookById = (req, res, next) => {
             id: req.params.bookId,
         }
     })
-    .then(book => book.dataValues)
-    .then(result => res.json(result));
+        .then(book => book.dataValues)
+        .then(result => res.json(result));
 };
 
 exports.editBook = (req, res, next) => {
@@ -57,15 +58,15 @@ exports.editBook = (req, res, next) => {
     };
 
     db.Book.update(book, selector)
-        .then(rowsUpdated =>  res.json(rowsUpdated))
+        .then(rowsUpdated => res.json(rowsUpdated))
 };
 
-  exports.deleteBook = (req, res, next) => {
+exports.deleteBook = (req, res, next) => {
     const selector = {
         where: {id: req.params.bookId}
     };
 
     db.Book.destroy(selector)
-    .then(rowsUpdated =>  res.json(rowsUpdated))
+        .then(rowsUpdated => res.json(rowsUpdated))
 };
 
