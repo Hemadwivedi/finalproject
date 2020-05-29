@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import login from './LogInUser';
 import './Login.css'
-// import logimg from '../../assets/login.png'
+
 
 class LogIn extends Component{
     constructor(props){
