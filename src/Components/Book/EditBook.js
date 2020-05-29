@@ -13,16 +13,17 @@ class AddBook extends Component {
             price: "",
             description: "",
             jpegImg: ""
-        };
+        }
+        console.log(this.props.bookId)
+        console.log(this.state.bookId)
+        this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.getBook = this.getBook.bind(this);
-        this.onChange = this.onChange.bind(this);
     }
 
     onChange(e) {
         this.setState({[e.target.name]: e.target.value})
     }
-
     componentDidMount() {
         this.getBook()
     }
@@ -43,7 +44,6 @@ class AddBook extends Component {
 
     }
 
-
     onSubmit(e) {
         e.preventDefault();
         const book = {
@@ -55,7 +55,7 @@ class AddBook extends Component {
         };
         AddBookFunction(book).then(response => {
             if (response) {
-                this.props.history.push('/browseBook')
+                this.props.history.push('')
             }
         })
     }
@@ -80,34 +80,34 @@ class AddBook extends Component {
                     </div>
                 </div>
                 <div className="container-submit">
-                    <div className="form-group">
-                        <label htmlFor="formGroupExampleInput">Book Title</label>
-                        <input type="text" className="form-control" placeholder="Enter book title" name="title"
-                               value={this.state.title} onChange={this.onChange}/>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="formGroupExampleInput">Author</label>
-                        <input type="text" className="form-control" placeholder="Enter the book's author"
-                               name="author" value={this.state.author} onChange={this.onChange}/>
-                    </div>
+                    <form method="post" action="/api/book/create" className="submitcont">
+                        <div className="form-group">
+                            <label htmlFor="formGroupExampleInput">Book Title</label>
+                            <input type="text" className="form-control" placeholder="Enter book title" name="title" value={this.state.title}/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="formGroupExampleInput">Author</label>
+                            <input type="text" className="form-control" placeholder="Enter the book's author"
+                                   name="author"/>
+                        </div>
 
-                    <div className="form-group">
-                        <label htmlFor="formGroupExampleInput">Price</label>
-                        <input type="number" min="5.00" max="100.00" step="0.01" className="form-control"
-                               placeholder="5.00" name="price" value={this.state.price} onChange={this.onChange}/>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="formGroupExampleInput">Description</label>
-                        <input type="text" className="form-control" placeholder="Enter a brief description"
-                               name="description" value={this.state.description} onChange={this.onChange}/>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="formGroupExampleInput">Book Cover</label>
-                        <input type="text" className="form-control" placeholder="Submit the cover URL"
-                               name="jpegImg" value={this.state.jpegImg} onChange={this.onChange}/>
-                    </div>
-                    <input name="submit" type="submit" className="btn submit-btn" value="Submit your book"
-                           onClick={this.onSubmit}/>
+                        <div className="form-group">
+                            <label htmlFor="formGroupExampleInput">Price</label>
+                            <input type="number" min="5.00" max="100.00" step="0.01" className="form-control"
+                                   placeholder="5.00" name="price"/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="formGroupExampleInput">Description</label>
+                            <input type="text" className="form-control" placeholder="Enter a brief description"
+                                   name="description"/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="formGroupExampleInput">Book Cover</label>
+                            <input type="text" className="form-control" placeholder="Submit the cover URL"
+                                   name="jpegImg"/>
+                        </div>
+                        <input name="submit" type="submit" className="btn submit-btn" value="Submit your book"/>
+                    </form>
                     <span className="todo-container">
 			</span>
                 </div>
@@ -120,4 +120,4 @@ class AddBook extends Component {
 
 }
 
-export default withRouter(AddBook);
+
