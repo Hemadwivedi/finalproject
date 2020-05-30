@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
 body {
-    background: #f28a4b;
+    background: goldenrod;
     width: 100%;
     font-family: 'Raleway', sans-serif;
     letter-spacing: 2px;
@@ -51,7 +51,7 @@ body {
 .item-price {
     font-size: 25px;
     font-weight: 700;
-    color: #0b8a6d;
+    color: goldenrod;
 }
 
 .checkout {
@@ -126,7 +126,7 @@ input[type=month]::-webkit-calendar-picker-indicator {
 }
 
 .checkout-btn {
-    background: linear-gradient(0deg, #019875, #029875);
+    background: goldenrod;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     border: 0;
     border-radius: 5px;
