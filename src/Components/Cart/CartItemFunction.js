@@ -1,4 +1,3 @@
-import React from 'react';
 import axios from 'axios';
 
 const CartItemFunction = () =>{
@@ -7,5 +6,5 @@ const CartItemFunction = () =>{
             console.log("" + response);
             return response
         })
-}
+};
 export default CartItemFunction;

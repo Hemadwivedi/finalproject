@@ -9,7 +9,7 @@ class CartItem extends Component {
         super(props);
         this.state = {
             items: []
-        }
+        };
         this.componentDidMount = this.componentDidMount.bind(this);
         this.updateCart = this.updateCart.bind(this);
         this.renderCartItems = this.renderCartItems.bind(this);
@@ -36,7 +36,7 @@ class CartItem extends Component {
         return this.state.items.map(book => {
             return (<div className="card-deck" id="{{id}}">
                     <div className="card">
-                        <img className="card-img-top" src={book.jpegImg} alt=""/>
+                        <img className="card-img-top" src={book.jpegImg} alt="bookImage"/>
                         <div className="card-body">
                             <h4 className="card-title">{book.title}</h4>
                             <p className="card-text">By: {book.author}</p>
@@ -54,7 +54,7 @@ class CartItem extends Component {
         return (
             <div className="cartcontent">
                 <div className="imageandwelcome">
-                    <img className="girlreading"/>
+                    <img className="girlreading" alt="image"/>
                     <h2 className="yourcart"> Your Cart! </h2>
                 </div>
                 <div className="checkoutbtndiv">

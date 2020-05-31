@@ -7,8 +7,8 @@ class LogIn extends Component{
     constructor(props){
         super(props);
         this.state={
-            email:'',
-            username:''
+            username:null,
+            password:null
         };
         this.onChange=this.onChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);

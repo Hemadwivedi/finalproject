@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Book from './Book';
+import { Link } from 'react-router-dom';
 import "./browsBook.css"
 
 import BrowseBookFunction from "./BrowseBookFunction";
@@ -37,15 +38,15 @@ class BrowseBook extends Component {
             return (<div className="card-deck">
                 <div className="card">
                     <img className="card-img-top" src={book.jpegImg} alt=""/>
-                        <div className="card-body">
-                            <h4 className="card-title">{book.title}</h4>
-                            <p className="card-text">By: {book.author}</p>
-                            <p className="card-text">{book.description}}</p>
-                            <p className="price-text">Price: {book.price}}</p>
-                            <Book updateBook={this.updateBook} bookId={book.id} isNotOwn={book.isNotOwn}/>
-                        </div>
+                    <div className="card-body">
+                        <h4 className="card-title">{book.title}</h4>
+                        <p className="card-text">By: {book.author}</p>
+                        <p className="card-text">{book.description}}</p>
+                        <p className="price-text">Price: {book.price}}</p>
+                        <Book updateBook={this.updateBook} bookId={book.id} isNotOwn={book.isNotOwn}/>
                     </div>
-                </div>)
+                </div>
+            </div>)
 
         });
     };
@@ -62,9 +63,8 @@ class BrowseBook extends Component {
 
                         </div>
                         <button className="btn btn-search1" id="addBook" type="button"> Add Another Book</button>
-                        <h5 className="linktoapi">If you don't find the book you are looking for, we got you! <a
-                            href="/search-apibook">Click
-                            here!</a></h5>
+                        <h5 className="linktoapi">If you don't find the book you are looking for, we got you!</h5>
+                        <Link to="/api-search">Click here!</Link>
                     </form>
                 </div>
                 <div className="allbooksdisplayed">

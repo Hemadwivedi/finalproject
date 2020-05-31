@@ -10,6 +10,7 @@ import Profile from './Components/User/Profile';
 import AddBook from './Components/Book/AddBook';
 import BrowseBook from './Components/Book/BrowseBook';
 import CartItem from "./Components/Cart/CartItem";
+import ExternalSearch from "./Components/SearchBook/ExternalSearch"
 import './App.css';
 import {Redirect} from 'react-router-dom';
 
@@ -81,6 +82,7 @@ class App extends Component {
                         <Route exact path='/addBook' component={AddBook}/>
                         <Route exact path='/browseBook'  component={BrowseBook}/>
                         <Route exact path='/cart'  component={CartItem}/>
+                        <Route exact path='/api-search'  component={ExternalSearch}/>
                     </div>
                 </div>
                 {this.redirect()}
