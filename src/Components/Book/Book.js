@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import {Link} from "react-router-dom";
+import CartService from "../Cart/CartService";
 
 class Book extends Component {
 
@@ -10,8 +10,8 @@ class Book extends Component {
     }
 
     handleClick() {
-        console.log(this.props.bookId)
-        axios.post('/api/cart/add/' + this.props.bookId)
+        console.log(this.props.bookId);
+        CartService.addToCart(this.props.bookId)
             .then(response => {
                 console.log(response);
                 this.props.updateBook(this.props.bookId)

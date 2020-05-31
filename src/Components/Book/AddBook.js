@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import AddBookFunction from './AddBookFunction';
-import EditBookFunction from './EditBookFunction';
+import BookService from './BookService';
 import {withRouter} from 'react-router-dom';
-import axios from "axios";
 import './addABook.css'
 
 class AddBook extends Component {
@@ -37,9 +35,8 @@ class AddBook extends Component {
     };
 
     getBookById = (bookId) => {
-
         if (bookId) {
-            axios.get(`/api/book/${bookId}`).then(response => {
+            BookService.getBookById(bookId).then(response => {
                 console.log('book Recieved ')
                 this.setState({
                     title: response.data.title,
@@ -68,9 +65,11 @@ class AddBook extends Component {
             }
         };
         if (this.getBookId()) {
-            EditBookFunction(book, this.getBookId()).then(redirectToBrowsBook)
+            BookService.editBook(this.getBookId(), book)
+                .then(redirectToBrowsBook)
         } else {
-            AddBookFunction(book).then(redirectToBrowsBook)
+            BookService.createBook(book)
+                .then(redirectToBrowsBook)
         }
 
     }

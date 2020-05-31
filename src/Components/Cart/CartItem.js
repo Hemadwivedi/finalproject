@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import CartItemFunction from "./CartItemFunction";
 import RemoveItem from './RemoveItem';
+import CartService from "./CartService";
 import './cartItem.css'
 
 
-class CartItem extends Component {
+class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +17,7 @@ class CartItem extends Component {
 
 
     componentDidMount() {
-        CartItemFunction().then(response => {
+        CartService.getCart().then(response => {
             console.log("Search Response: " + response);
             this.setState({
                 items: response.data
@@ -72,4 +72,4 @@ class CartItem extends Component {
     }
 }
 
-export default CartItem;
+export default Cart;

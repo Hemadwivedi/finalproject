@@ -3,7 +3,7 @@ import Book from './Book';
 import { Link } from 'react-router-dom';
 import "./browsBook.css"
 
-import BrowseBookFunction from "./BrowseBookFunction";
+import BookService from "./BookService";
 
 
 class BrowseBook extends Component {
@@ -19,7 +19,7 @@ class BrowseBook extends Component {
 
 
     componentDidMount() {
-        BrowseBookFunction().then(response => {
+        BookService.searchBook().then(response => {
             console.log("Search Response: " + response);
             this.setState({
                 books: response.data

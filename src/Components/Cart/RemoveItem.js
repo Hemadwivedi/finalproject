@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import CartService from "./CartService";
 import axios from 'axios';
 
 class RemoveItem extends Component {
@@ -10,7 +11,7 @@ class RemoveItem extends Component {
 
     handleClick() {
         console.log(this.props.bookId)
-        axios.delete(`/api/cart/${this.props.bookId}`)
+        CartService.delete(this.props.bookId)
             .then(response => {
                 console.log(response);
                 this.props.updateCart(this.props.bookId)
