@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+import './ExternalSearch.css'
 
 class ExternalSearch extends Component {
     constructor(props) {
@@ -70,7 +70,7 @@ class ExternalSearch extends Component {
             <div className="apicontent">
                 <div className="imagesearch">
                 </div>
-                <div id="search">
+                <div className="search">
                     <form id="myform">
                         <div className="input-field">
                             <input type="search" id="search-box" className="form-control" placeholder="Search for Books"
