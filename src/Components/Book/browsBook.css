@@ -1,0 +1,13 @@
+.broseBookImg{
+    background-image: url("../../assets/browse.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width:350px;
+    height: 300px;
+}

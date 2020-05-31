@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import AddBookFunction from './AddBookFunction';
+import EditBookFunction from './EditBookFunction';
 import {withRouter} from 'react-router-dom';
 import axios from "axios";
 import './addABook.css'
+
 class AddBook extends Component {
 
     constructor(props) {
@@ -15,7 +17,8 @@ class AddBook extends Component {
             jpegImg: ""
         };
         this.onSubmit = this.onSubmit.bind(this);
-        this.getBook = this.getBook.bind(this);
+        this.getBookById = this.getBookById.bind(this);
+        this.getBookId = this.getBookId.bind(this);
         this.onChange = this.onChange.bind(this);
     }
 
@@ -23,25 +26,31 @@ class AddBook extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    componentDidMount() {
-        this.getBook()
-    }
+    componentDidMount = () => {
+        this.getBookById(this.getBookId())
+    };
 
-    getBook() {
-        if (this.props.location.state && this.props.location.state.bookId) {
-            axios.get(`/api/book/${this.props.location.state.bookId}`).then(response => {
+    getBookId = () => {
+        if (this.props.location.state) {
+            return this.props.location.state.bookId
+        }
+    };
+
+    getBookById = (bookId) => {
+
+        if (bookId) {
+            axios.get(`/api/book/${bookId}`).then(response => {
                 console.log('book Recieved ')
                 this.setState({
                     title: response.data.title,
                     author: response.data.author,
                     price: response.data.price,
                     description: response.data.description,
-                    jpegImg: response.data.jpegImg
+                    jpegImg: response.data.jpegImg,
                 })
             })
         }
-
-    }
+    };
 
 
     onSubmit(e) {
@@ -51,13 +60,19 @@ class AddBook extends Component {
             author: this.state.author,
             price: this.state.price,
             description: this.state.description,
-            jpegImg: this.state.jpegImg
+            jpegImg: this.state.jpegImg,
         };
-        AddBookFunction(book).then(response => {
+        const redirectToBrowsBook = response => {
             if (response) {
                 this.props.history.push('/browseBook')
             }
-        })
+        };
+        if (this.getBookId()) {
+            EditBookFunction(book, this.getBookId()).then(redirectToBrowsBook)
+        } else {
+            AddBookFunction(book).then(redirectToBrowsBook)
+        }
+
     }
 
     render() {
@@ -82,7 +97,8 @@ class AddBook extends Component {
                 <div className="container-submit">
                     <form method="post" action="/api/book/create" className="submitcont">
                         <div className="form-group">
-                            <label className="bookattr" style={{textAlign:"c"}} htmlFor="formGroupExampleInput">Book Title</label>
+                            <label className="bookattr" style={{textAlign: "c"}} htmlFor="formGroupExampleInput">Book
+                                Title</label>
                             <input type="text" className="form-control" placeholder="Enter book title" name="title"
                                    value={this.state.title} onChange={this.onChange}/>
                         </div>

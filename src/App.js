@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import axios from 'axios';
 
-import Navbar from './Components/Navbar/Navbar'
-import Login from './Components/Login/Login'
-import Register from './Components/Register/Register'
-import Home from './Components/home'
-import Profile from './Components/User/Profile'
-import AddBook from './Components/Book/AddBook'
-import BrowseBook from './Components/Book/BrowseBook'
+import Navbar from './Components/Navbar/Navbar';
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
+import Home from './Components/home';
+import Profile from './Components/User/Profile';
+import AddBook from './Components/Book/AddBook';
+import BrowseBook from './Components/Book/BrowseBook';
+import CartItem from "./Components/Cart/CartItem";
 import './App.css';
 import {Redirect} from 'react-router-dom';
 
@@ -70,18 +71,16 @@ class App extends Component {
                     <div className='container'>
                         <Route exact path='/'
                                render={() => <Login updateUser={this.updateUser}/>}/>
-                        <Route exact path='/register' component={Register}/>
-                        <Route exact path='/profile' component={Profile}/>
-                        <Route exact path='/addBook' component={AddBook}/>
-                        <Route exact path='/browseBook'
-                               render={() => <BrowseBook updateUser={this.updateUser} userId={this.state.userId}
-                                                         username={this.state.username}/>}
-                        />
                         <Route
                             path='/home'
                             render={() => <Home updateUser={this.updateUser} userId={this.state.userId}
                                                 username={this.state.username}/>}
                         />
+                        <Route exact path='/register' component={Register}/>
+                        <Route exact path='/profile' component={Profile}/>
+                        <Route exact path='/addBook' component={AddBook}/>
+                        <Route exact path='/browseBook'  component={BrowseBook}/>
+                        <Route exact path='/cart'  component={CartItem}/>
                     </div>
                 </div>
                 {this.redirect()}

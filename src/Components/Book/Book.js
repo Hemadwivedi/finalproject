@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import EditBook from './EditBook';
 import {Link} from "react-router-dom";
 
 class Book extends Component {

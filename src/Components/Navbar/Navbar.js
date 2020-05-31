@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import { createBrowserHistory } from "history";
-import login from "../Login/LogInUser";
-
 
 
 class Navbar extends Component {
@@ -52,8 +49,11 @@ class Navbar extends Component {
                                         <Link to="/register">
                                             <span>Profile</span>
                                         </Link>
-                                        <Link to="/library">
+                                        <Link to="/browseBook">
                                             <span>Library</span>
+                                        </Link>
+                                        <Link to="/cart">
+                                            <span>Cart</span>
                                         </Link>
 
                                         <Link onClick={this.onSubmit}>
