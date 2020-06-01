@@ -6,18 +6,43 @@ const app = express();
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.resolve(__dirname, "build")));
-  }
-app.use(express.urlencoded({extended: true}));
+}
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+var bodyParser = require('body-parser')
+app.use(bodyParser.json());       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
 
 
 
 // for loging
 const passport = require("./config/passport");
 const session = require("express-session");
-app.use(session({secret: "hemashirleyeti", resave: true, saveUninitialized: true}));
+app.use(session({ secret: "hemashirleyeti", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
 
 //TODO delete later now dont want to login every time
 /*app.use((req, res, next) => {
@@ -44,18 +69,39 @@ app.use('/api/cart', cartRoutes);
 const db = require("./models");
 // one user can have many book
 db.User.hasMany(db.Book);
-db.Book.belongsTo(db.User, {constraints: true, onDelete: 'CASCADE'});
+db.Book.belongsTo(db.User, { constraints: true, onDelete: 'CASCADE' });
 
 // one user will have only one cart
 db.User.hasOne(db.Cart);
 db.Cart.belongsTo(db.User);
 
 //in one cart we can have many book
-db.Cart.belongsToMany(db.Book, {through: db.CartItem});
+db.Cart.belongsToMany(db.Book, { through: db.CartItem });
 
 // one book can belong to many cart
-db.Book.belongsToMany(db.Cart, {through: db.CartItem});
+db.Book.belongsToMany(db.Cart, { through: db.CartItem });
 
+
+app.get('/api/comment', function (req, res) {
+
+    db.Comment.findAll().then(function (data) {
+        console.log('this db from data!!', data)
+        res.json(data)
+    })
+    console.log('we hit hit comment get route!!')
+    //res.json({ data: 'hello from route!!' })
+})
+
+app.post('/api/comment', function (req, res) {
+
+    console.log('we hit hit comment post route!!', req.body)
+
+
+    db.Comment.create(req.body).then(function (dataFromDb) {
+        res.json(dataFromDb)
+    })
+
+})
 
 //Server start
 const PORT = process.env.PORT || 8080;
