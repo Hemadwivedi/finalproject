@@ -64,7 +64,6 @@ class BrowseBook extends Component {
         return (
             <div className="availablecontent">
                 <div className="imagebrowse">
-                    <img className="broseBookImg"/>
                 </div>
                 <div id="search">
                     <form id="myform">
