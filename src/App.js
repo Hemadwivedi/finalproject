@@ -14,7 +14,8 @@ import ExternalSearch from "./Components/SearchBook/ExternalSearch"
 import './App.css';
 import { Redirect } from 'react-router-dom';
 import BookContext from "./utils/bookContext.js";
-import Cart from './Components/Cart/cart'
+import Comment from './Components/Comment/index.js'
+import Cart from './Components/Cart/Cart.js'
 
 class App extends Component {
     constructor(props) {
@@ -96,6 +97,7 @@ class App extends Component {
                             <Route exact path='/register' component={Register} />
                             <Route exact path='/profile' component={Profile} />
                             <Route exact path='/addBook' component={AddBook} />
+                            <Route exact path='/comment' component={Comment} />
                             <Route exact path='/browseBook' component={BrowseBook} />
                             <Route exact path='/cart' component={CartItem} />
                             <Route exact path='/api-search' component={ExternalSearch} />
