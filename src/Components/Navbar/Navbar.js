@@ -43,7 +43,7 @@ class Navbar extends Component {
                     <div>
                         {
                             loggedIn ? (
-                                    <section>
+                                    <section className="navbarall">
                                         <Link to="/home">
                                             <span className="navlinks">Home</span>
                                         </Link>
