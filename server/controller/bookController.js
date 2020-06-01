@@ -18,20 +18,20 @@ exports.searchBook = (req, res, next) => {
     console.log('about to search al lthe books!!')
     db.Book.findAll()
         .then(function (books) {
-            res.json(books)
-            // db.User.findById(req.user.id)
-            //     .then(user =>
-            //         user.getCart()
-            //             .then(cart => cart.getBooks())
-            //             .then(cartBooks => cartBooks.map(b => b.id))
-            //             .then(booksIdInCart => books.filter(book => !booksIdInCart.includes(book.id)))
-            //     ).then(filterBook => {
-            //         const booksData = filterBook.map(book => book.dataValues)
-            //             .map(booksData => {
-            //                 booksData.isNotOwn = !(booksData.UserId === req.user.id);
-            //                 return booksData;
-            //             });
-            //     }).then(result => res.json(result));
+            db.User.findByPk(req.user.id)
+                .then(user =>
+                    user.getCart()
+                        .then(cart => cart.getBooks())
+                        .then(cartBooks => cartBooks.map(b => b.id))
+                        .then(booksIdInCart => books.filter(book => !booksIdInCart.includes(book.id)))
+                ).then(filterBook => {
+                    const booksData = filterBook.map(book => book.dataValues)
+                        .map(booksData => {
+                            booksData.isNotOwn = !(booksData.UserId === req.user.id);
+                            return booksData;
+                        });
+                    return booksData
+                }).then(result => res.json(result));
 
         });
 };

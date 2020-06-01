@@ -45,13 +45,13 @@ app.use(function (req, res, next) {
 });
 
 //TODO delete later now dont want to login every time
-/*app.use((req, res, next) => {
+app.use((req, res, next) => {
     db.User.findByPk(3)
         .then(user => {
             req.user = user.dataValues;
             next();
         }).catch(e => console.log(`error ${e}`));
-});*/
+});
 
 //routing
 

@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import { createBrowserHistory } from "history";
-import login from "../Login/LogInUser";
-
 
 
 class Navbar extends Component {
     constructor(props) {
         super(props);
+        this.state= {}
         this.logout = this.logout.bind(this);
     }
     onSubmit(e){
@@ -16,7 +14,9 @@ class Navbar extends Component {
 
         axios.get('/api/logout').then(res=>{
             if(res){
-                this.history.push('/home');
+                this.setState({
+                    redirectTo: '/'
+                })
             }
         })
     }
@@ -49,8 +49,11 @@ class Navbar extends Component {
                                         <Link to="/register">
                                             <span>Profile</span>
                                         </Link>
-                                        <Link to="/library">
+                                        <Link to="/browseBook">
                                             <span>Library</span>
+                                        </Link>
+                                        <Link to="/cart">
+                                            <span>Cart</span>
                                         </Link>
 
                                         <Link onClick={this.onSubmit}>
