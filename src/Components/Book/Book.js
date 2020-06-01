@@ -1,44 +1,22 @@
-import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import CartService from "../Cart/CartService";
+import React from 'react';
+import BookOperation from  "./BookOperation"
 
-class Book extends Component {
-
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this)
-    }
-
-    handleClick() {
-        console.log(this.props.bookId);
-        CartService.addToCart(this.props.bookId)
-            .then(response => {
-                console.log(response);
-                this.props.updateBook(this.props.bookId)
-            })
-    }
-
-    render() {
-        return (
-            <div>
-                {this.props.isNotOwn ?
-                    (<button onClick={this.handleClick}>Add to cart</button>)
-                    :
-                    (
-                        <button className="test">
-                            <Link to={{
-                                pathname:"/addBook",
-                                state : {
-                                    bookId: this.props.bookId
-                                }}}>Edit</Link>
-                        </button>
-                    )
-                }
-
+const book = (props) => {
+   return (<div className="card-deck">
+        <div className="card">
+            <img className="card-img-top" src={props.jpegImg} alt=""/>
+            <div className="card-body">
+                <h4 className="card-title">{props.title}</h4>
+                <p className="card-text">By: {props.author}</p>
+                <p className="card-text">{props.description}}</p>
+                <p className="price-text">Price: {props.price}}</p>
+                <BookOperation addToCart={props.addToCart} bookId={props.bookId} isNotOwn={props.isNotOwn}/>
             </div>
-        )
-    }
+        </div>
+    </div>)
+
+
 
 }
 
-export default Book;
+export default book;

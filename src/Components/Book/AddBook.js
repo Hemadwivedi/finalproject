@@ -59,11 +59,13 @@ class AddBook extends Component {
             description: this.state.description,
             jpegImg: this.state.jpegImg,
         };
+
         const redirectToBrowsBook = response => {
             if (response) {
                 this.props.history.push('/browseBook')
             }
         };
+
         if (this.getBookId()) {
             BookService.editBook(this.getBookId(), book)
                 .then(redirectToBrowsBook)
