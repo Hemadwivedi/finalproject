@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import './Navbar.css'
 
 
 class Navbar extends Component {
@@ -44,20 +45,20 @@ class Navbar extends Component {
                             loggedIn ? (
                                     <section>
                                         <Link to="/home">
-                                            <span>Home</span>
+                                            <span className="navlinks">Home</span>
                                         </Link>
                                         <Link to="/register">
-                                            <span>Profile</span>
+                                            <span className="navlinks">Profile</span>
                                         </Link>
                                         <Link to="/browseBook">
-                                            <span>Library</span>
+                                            <span className="navlinks">Library</span>
                                         </Link>
                                         <Link to="/cart">
-                                            <span>Cart</span>
+                                            <span className="navlinks">Cart</span>
                                         </Link>
 
                                         <Link onClick={this.onSubmit}>
-                                            <span>logout</span></Link>
+                                            <span className="navlinks">Logout</span></Link>
                                     </section>) :
                                 (
                                     <section>

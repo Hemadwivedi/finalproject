@@ -151,3 +151,11 @@ li{
     margin-left: 5px;
 }
 
+.terms{
+  color: blue;
+}
+
+.terms:hover{
+  color: blue;
+}
+
