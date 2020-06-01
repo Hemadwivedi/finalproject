@@ -72,8 +72,8 @@ class BrowseBook extends Component {
 
                         </div>
                         <button className="btn btn-search1" id="addBook" type="button"> Add Another Book</button>
-                        <h5 className="linktoapi">If you don't find the book you are looking for, we got you!</h5>
-                        <Link to="/api-search">Click here!</Link>
+                        <h5 className="linktoapi">If you don't find the book you are looking for, we got you! <Link to="/api-search" className="thelink">Click here!</Link></h5>
+
                     </form>
                 </div>
                 <div className="allbooksdisplayed">

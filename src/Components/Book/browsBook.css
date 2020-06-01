@@ -1,13 +1,103 @@
 .broseBookImg{
     background-image: url("../../assets/browse.png");
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    min-height: 100vh;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
     width:350px;
     height: 300px;
+}
+
+.linktoapi{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.card{
+    width: 200px;
+    position: relative;
+    float: left;
+    margin-bottom: 120px;
+    margin-right: 90px;
+    word-wrap: break-word;
+    min-height: 450px;
+    max-height: 450px;
+}
+
+.card-deck{
+    margin-bottom: 130px;
+
+}
+
+.card-body{
+    width: 200px;
+}
+
+.card-img-top{
+    width: 200px;
+}
+
+.card-title{
+   font-size: 14px;
+   font-weight: bold;
+}
+
+.price-text{
+    margin-left: 0px;
+}
+
+.card-text{
+    font-size: 11px;
+    padding-bottom: 10px;
+    margin-left: 0px;
+}
+
+button{
+    padding: 17px 40px 16px 41px;
+    border-radius: 4px;
+    background-color: rgb(217, 165, 32);
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    line-height: 20px; 
+    left:50px;
+    border: none;
+    width: 200px;
+    margin-left: -20px;
+}
+
+.btn-search1{
+    padding: 17px 40px 16px 41px;
+    border-radius: 4px;
+    background-color: rgb(217, 165, 32);
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    line-height: 20px; 
+    position:relative;
+    left:10px;
+    margin-left: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+button.test{
+    width: 200px;
+    margin-left: -20px;
+}
+
+.thelink{
+    text-decoration: initial;
+    color: blue;
+}
+
+.thelink:hover{
+    color: blue;
 }
