@@ -1,4 +1,8 @@
-.imagesearch{
+*{
+    box-sizing: border-box;
+}
+
+.apiimage{
     background-image: url('../../assets/searchapi.png');
     vertical-align: top;
     text-align: center;
@@ -15,7 +19,7 @@
     color: white;
     line-height: 20px; 
     position:relative;
-	left:83px;
+    left:83px;
 }
 
 .input-field{
@@ -68,14 +72,33 @@
     max-height: 450px;
     max-width: 200px;
     border-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .allbooksdisplayed{
-    align-items: center;
+    /* align-items: center; */
     width: 100vw;
     height: 500px;
     margin-top: 50px;
     align-items: center;
     margin-left: 60px;
     white-space: nowrap;
+    
  }
+
+ .btn-block{
+    padding: 17px 40px 16px 41px;
+    border-radius: 4px;
+    background-color: rgb(217, 165, 32);
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    line-height: 20px; 
+    margin-left: -20px;
+    width: 200px;
+}
+
+.card-deck{
+    float: left;
+    padding: 0 10px;
+}

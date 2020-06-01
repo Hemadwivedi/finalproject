@@ -69,6 +69,7 @@ class ExternalSearch extends Component {
         return (
             <div className="apicontent">
                 <div className="imagesearch">
+                    <img className="apiimage"/>
                 </div>
                 <div className="search">
                     <form id="myform">
