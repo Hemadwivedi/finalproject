@@ -9,7 +9,7 @@ import Home from './Components/home';
 import Profile from './Components/User/Profile';
 import AddBook from './Components/Book/AddBook';
 import BrowseBook from './Components/Book/BrowseBook';
-import CartItem from "./Components/Cart/CartItem";
+import CartItem from "./Components/Cart/Cart";
 import ExternalSearch from "./Components/SearchBook/ExternalSearch"
 import './App.css';
 import {Redirect} from 'react-router-dom';
