@@ -1,145 +1,98 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBCard, MDBAvatar, MDBCardBody, MDBIcon } from "mdbreact";
 
 const TeamPage = () => {
     return (
-        <MDBCard className="my-5 px-5 pb-1 text-center">
-            <MDBCardBody>
-                <h2 className="h1-responsive font-weight-bold my-5">
-                    Our amazing team
-                </h2>
-                <p className="grey-text w-responsive mx-auto mb-5">
-                    We had an amazing journey coming to where we are today, and
-                    now we feel confident that we can provide you a professional
-                    and effective solution in a timely manner.
-                </p>
-                <MDBRow className="text-md-left">
-                    <MDBCol lg="6" md="12" className="mb-5">
-                        <MDBCol md="4" lg="6" className="float-left">
-                            <MDBAvatar
-                                img src="\src\assets\eti.jpg"
-                                className="mx-auto mb-md-0 mb-4 rounded z-depth-1 img-fluid"
-                                tag="img"
-                                alt="Eti B "
-                            />
-                        </MDBCol>
-                        <MDBCol md="8" lg="6" className="float-right">
-                            <h4 className="font-weight-bold mb-3">Ekaterina Blagoeva</h4>
-                            <h6 className="font-weight-bold grey-text mb-3">
-                                Full Stack Developer
-                            </h6>
-                            <p className="grey-text">
-                                Born and raised in Bulgaria. Interests include fishing, gaming, gardening and
-                                listening to bulgarian music.
-                             </p>
-                            <a href="#!" className="p-2 fa-lg github-ic">
-                                <MDBIcon fab icon="github" />
-                            </a>
-                            <a href="#!" className="p-2 fa-lg li-ic">
-                                <MDBIcon fab icon="linkedin-in" />
-                            </a>
-                            <a href="#!" className="p-2 fa-lg ins-ic">
-                                <MDBIcon fab icon="instagram" />
-
-                            </a>
-                        </MDBCol>
-                    </MDBCol>
-
-                    <MDBCol lg="6" md="12" className="mb-5">
-                        <MDBCol md="4" lg="6" className="float-left">
-                            <MDBAvatar
-                                img src="\src\assets\hema.jpg"
-                                className="mx-auto mb-md-0 mb-4 rounded z-depth-1 img-fluid"
-                                tag="img"
-                                alt="Hema D"
-                            />
-                        </MDBCol>
-                        <MDBCol md="8" lg="6" className="float-right">
-                            <h4 className="font-weight-bold mb-3">Hema Dwivedi</h4>
-                            <h6 className="font-weight-bold grey-text mb-3">
-                                Full Stack Developer
-              </h6>
-                            <p className="grey-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                                eos id officiis hic tenetur.
-              </p>
-                            <a href="#!" className="p-2 fa-lg github-ic">
-                                <MDBIcon fab icon="github" />
-                            </a>
-                            <a href="#!" className="p-2 fa-lg li-ic">
-                                <MDBIcon fab icon="linkedin-in" />
-                            </a>
-                            <a href="#!" className="p-2 fa-lg ins-ic">
-                                <MDBIcon fab icon="instagram" />
-                            </a>
-                        </MDBCol>
-                    </MDBCol>
-
-                    <MDBCol lg="6" md="12" className="mb-5">
-                        <MDBCol md="4" lg="6" className="float-left">
-                            <MDBAvatar
-                                img src="src\assets\madel.png"
-                                className="mx-auto  mb-md-0 mb-4 rounded z-depth-1 img-fluid"
-                                tag="img"
-                                alt="Madel L"
-                            />
-                        </MDBCol>
-                        <MDBCol md="8" lg="6" className="float-right">
-                            <h4 className="font-weight-bold mb-3">Madel Liquido</h4>
-                            <h6 className="font-weight-bold grey-text mb-3">
-                                Full Stack Developer
-                            </h6>
-                            <p className="grey-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                                eos id officiis hic tenetur.
+        <div>
+            <section id="about" className="py-3">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <h1 className="greettxt">About Us</h1>
+                            <br/>
+                            <p className="aboutus">We are all very different. We were born in different continents, at
+                                different times,
+                                love different music, food and movies. But we have something that unites us all,
+                                it is our desire to bring happiness to people wherever we go.
                             </p>
-
-                            <a href="#!" className="p-2 fa-lg github-ic">
-                                <MDBIcon fab icon="github" />
-                            </a>
-                            <a href="#!" className="p-2 fa-lg li-ic">
-                                <MDBIcon fab icon="linkedin-in" />
-                            </a>
-                            <a href="#!" className="p-2 fa-lg ins-ic">
-                                <MDBIcon fab icon="instagram" />
-                            </a>
-                        </MDBCol>
-                    </MDBCol>
-
-                    <MDBCol lg="6" md="12" className="mb-5">
-                        <MDBCol md="4" lg="6" className="float-left">
-                            <MDBAvatar
-                                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(29).jpg"
-                                className="mx-auto mb-md-0 mb-4 rounded z-depth-1 img-fluid"
-                                tag="img"
-                                alt="Sample avatar"
-                            />
-                        </MDBCol>
-                        <MDBCol md="8" lg="6" className="float-right">
-                            <h4 className="font-weight-bold mb-3">Sarah Melyah</h4>
-                            <h6 className="font-weight-bold grey-text mb-3">
-                                Front-end Developer
-              </h6>
-                            <p className="grey-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                                eos id officiis hic tenetur.
-              </p>
-                            <a href="#!" className="p-2 fa-lg gplus-ic">
-                                <MDBIcon fab icon="google-plus-g" />
-                            </a>
-                            <a href="#!" className="p-2 fa-lg li-ic">
-                                <MDBIcon fab icon="linkedin-in" />
-                            </a>
-                            <a href="#!" className="p-2 fa-lg email-ic">
-                                <MDBIcon icon="envelope" />
-                            </a>
-                        </MDBCol>
-                    </MDBCol>
-                </MDBRow>
-            </MDBCardBody>
-        </MDBCard>
+                            <p>We did our research and we've found that 75% of Americans experience moderate to high
+                                stress levels each
+                                month.
+                                73% of people have stress that impacts their mental health and 48% of people have
+                                trouble sleeping because of
+                                stress.
+                            </p>
+                            <p>And with all this data in mind, we created the project Live Happy. With it we are
+                                bringing to you positive,
+                                uplifting and funny content, that is meant to relieve you from your daily stress.
+                            </p>
+                        </div>
+                        <div className="col-md-6">
+                            <img src="https://source.unsplash.com/random/700x700/?computers" alt=""
+                                 className="img-fluid rounded-circle d-none d-md-block about-img"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="staff" className="py-5 text-center bg-dark text-white">
+                <div className="container">
+                    <h1>Contributors</h1>
+                    <hr/>
+                    <div className="row">
+                        <div className="col-lg-4">
+                            <img className="rounded-circle" src="../../assets/eti.jpg"
+                                 alt="Generic placeholder image"
+                                 width="140"
+                                 height="140"/>
+                            <h2>Ekaterina Blagoeva</h2>
+                            <p>Born and raised in Bulgaria. Interests include fishing, gaming, gardening. My way
+                                of
+                                dealing with stress is
+                                gaming, listening to bulgarian music and talking about my problems with my
+                                family.</p>
+                        </div>
+                        <div className="col-lg-4">
+                            <img className="rounded-circle" src="../../assets/hema.jpg"
+                                 alt="Generic placeholder image"
+                                 width="140"
+                                 height="140"/>
+                            <h2 className="p-1">Hema Dwivedi</h2>
+                            <p className="p-3"> I belong to India.My hobby is singing,raeading books,and visit
+                                new
+                                places.
+                            </p>
+                        </div>
+                        <div className="col-lg-4">
+                            <img className="rounded-circle" src="../../assets/shirley.jpg"
+                                 alt="Generic placeholder image"
+                                 width="140"
+                                 height="140"/>
+                            <h2>Shirley Rivera</h2>
+                            <p>A native Jersey girl with roots in the NYC that wants to make things that make a
+                                difference. I love white
+                                sandy beaches and going out with friends. I deal with stress by dancing, working
+                                out and
+                                listening to good
+                                music. </p>
+                        </div>
+                        <div className="col-lg-4">
+                            <img className="rounded-circle" src="../../assets/madel.png"
+                                 alt="Generic placeholder image"
+                                 width="140"
+                                 height="140"/>
+                            <h2>Madel</h2>
+                            <p>A native Jersey girl with roots in the NYC that wants to make things that make a
+                                difference. I love white
+                                sandy beaches and going out with friends. I deal with stress by dancing, working
+                                out and
+                                listening to good
+                                music. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     );
-}
+};
 
 export default TeamPage;
 

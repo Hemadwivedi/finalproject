@@ -57,6 +57,10 @@ class Navbar extends Component {
                                             <span className="navlinks">Cart</span>
                                         </Link>
 
+                                        <Link to="/about">
+                                            <span className="navlinks">About</span>
+                                        </Link>
+
                                         <Link onClick={this.onSubmit}>
                                             <span className="navlinks">Logout</span></Link>
                                     </section>) :
