@@ -63,20 +63,20 @@ class ExternalSearch extends Component {
                 )
 
             });
-            
+
     };
 
     render() {
         return (
             <div className="apicontent">
                 <div className="imagesearch">
-                    
+
                 </div>
                 <div className="search">
                     <form id="myform">
                         <div className="input-field">
                             <input type="search" id="search-box" className="form-control" placeholder="Search for Books"
-                                   aria-describedby="button-addon2" onChange={this.onChange}
+                                   aria-describedby="button-addon2" onChange={this.onChange} name="inputText"
                                    value={this.state.inputText}/>
 
                         </div>

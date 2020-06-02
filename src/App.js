@@ -17,7 +17,6 @@ import Blog from './Components/blog/Blog';
 import TeamPage from './Components/About/TeamPage';
 
 
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -73,6 +72,9 @@ class App extends Component {
                 <div className="App">
                     <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
                     <div className='container'>
+                        <Route exact path='/register'
+                               render={() => <Register updateUser={this.updateUser}/>}
+                        />
                         <Route exact path='/'
                                render={() => <Login updateUser={this.updateUser}/>}/>
                         <Route
@@ -80,14 +82,14 @@ class App extends Component {
                             render={() => <Home updateUser={this.updateUser} userId={this.state.userId}
                                                 username={this.state.username}/>}
                         />
-                        <Route exact path='/register' component={Register}/>
+
                         <Route exact path='/profile' component={Profile}/>
                         <Route exact path='/addBook' component={AddBook}/>
-                        <Route exact path='/browseBook'  component={BrowseBook}/>
-                        <Route exact path='/cart'  component={CartItem}/>
-                        <Route exact path='/api-search'  component={ExternalSearch}/>
-                        <Route exact path='/blog' component={Blog} />
-                        <Route exact path='/about'  component={TeamPage}/>
+                        <Route exact path='/browseBook' component={BrowseBook}/>
+                        <Route exact path='/cart' component={CartItem}/>
+                        <Route exact path='/api-search' component={ExternalSearch}/>
+                        <Route exact path='/blog' component={Blog}/>
+                        <Route exact path='/about' component={TeamPage}/>
                     </div>
                 </div>
                 {this.redirect()}
