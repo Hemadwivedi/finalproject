@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+import './ExternalSearch.css'
 
 class ExternalSearch extends Component {
     constructor(props) {
@@ -48,7 +48,7 @@ class ExternalSearch extends Component {
                 return book;
             })
             .map(book => {
-                return (<div className="allbooksdisplayed">
+                return (
                     <div className="card-deck">
                         <div className="card">
                             <img className="card-img-top" src={book.thumbnail} alt=""/>
@@ -60,17 +60,19 @@ class ExternalSearch extends Component {
                             </div>
                         </div>
                     </div>
-                </div>)
+                )
 
             });
+            
     };
 
     render() {
         return (
             <div className="apicontent">
                 <div className="imagesearch">
+                    
                 </div>
-                <div id="search">
+                <div className="search">
                     <form id="myform">
                         <div className="input-field">
                             <input type="search" id="search-box" className="form-control" placeholder="Search for Books"
@@ -83,7 +85,7 @@ class ExternalSearch extends Component {
                         </button>
                     </form>
                 </div>
-                <div className="results">
+                <div className="allbooksdisplayed">
                     {this.renderBooks()}
                 </div>
             </div>

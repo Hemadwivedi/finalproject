@@ -1,0 +1,23 @@
+.navlinks{
+    color: rgb(70,69,91);
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: .6s;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.navlinks:hover{
+    background: goldenrod; 
+}
+
+.navbarall{
+    width: 100%;
+    padding-right: 10px;
+    top: 0px;
+    transition: .5s;
+    text-align: right;
+    margin-bottom: 0px;
+}

@@ -65,7 +65,7 @@ body{
     font-size: 15px;
     background-color: #f4f4f4;
     padding: 19px 25px 18px;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .login-btn{
@@ -76,7 +76,6 @@ body{
     font-weight: bold;
     color: white;
     line-height: 20px;
-    margin-bottom: 10px;
 }
 
 .login-btn:hover{
@@ -116,6 +115,8 @@ h1{
     margin: 50px 50px;
     margin-top: -10px;
     margin-bottom: 10px;
+    font-size: 30px;  
+    padding: 20px;
 }
 .intro-text{
     margin-bottom: -10px;
@@ -159,4 +160,5 @@ p{
 .login-wrapper-signup-text{
     color: rgb(63,61,86);
     margin-left: -8px;
+    margin-top: -40px;
 }

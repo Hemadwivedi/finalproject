@@ -79,7 +79,7 @@ class AddBook extends Component {
     render() {
         return (
             <div className="createcontent">
-                <h5 className="rules">Before you submit your book, please read our <a href="#popup1">Terms and
+                <h5 className="rules">Before you submit your book, please read our <a href="#popup1" className="terms">Terms and
                     Conditions</a>!</h5>
                 <div id="popup1" className="overlay">
                     <div className="popup">
