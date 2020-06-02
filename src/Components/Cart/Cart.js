@@ -54,16 +54,14 @@ class Cart extends Component {
     render() {
         return (
             <div className="cartcontent">
-                <div className="imageandwelcome">
-                    <img className="girlreading" alt="image"/>
-                    <h2 className="yourcart"> Your Cart! </h2>
+                <div className="cartimage">
                 </div>
+                <h2 className="yourcart">Welcome to your cart! </h2>
                 <div className="checkoutbtndiv">
                     <input id="checkout" className="btn checkout-btn" value="Checkout"/>
                 </div>
                 <div className="allbooksdisplayed">
                     {
-
                         this.renderCartItems()
                     }
                 </div>
