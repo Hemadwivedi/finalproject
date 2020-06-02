@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import login from './LogInUser';
 import './Login.css'
-// import logimg from '../../assets/login.png'
+
 
 class LogIn extends Component{
     constructor(props){
         super(props);
         this.state={
-            email:'',
-            username:''
+            username:null,
+            password:null
         };
         this.onChange=this.onChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
@@ -25,7 +25,14 @@ class LogIn extends Component{
       };
       login(user).then(res=>{
        if(res){
-           this.props.history.push('/home');
+           this.props.updateUser({
+               loggedIn: true,
+               userId: res.id,
+               username: res.username
+           });
+           this.setState({
+               redirectTo: '/home'
+           })
        }
       })
     }

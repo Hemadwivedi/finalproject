@@ -2,15 +2,19 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import axios from 'axios';
 
-import Navbar from './Components/Navbar/Navbar'
-import Login from './Components/Login/Login'
-import Register from './Components/Register/Register'
-import Home from './Components/home'
-import Profile from './Components/User/Profile'
-import AddBook from './Components/Book/AddBook'
-import BrowseBook from './Components/Book/BrowseBook'
+import Navbar from './Components/Navbar/Navbar';
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
+import Home from './Components/home';
+import Profile from './Components/User/Profile';
+import AddBook from './Components/Book/AddBook';
+import BrowseBook from './Components/Book/BrowseBook';
+import CartItem from "./Components/Cart/Cart";
+import ExternalSearch from "./Components/SearchBook/ExternalSearch"
 import './App.css';
 import {Redirect} from 'react-router-dom';
+import Blog from './Components/blog/Blog';
+import TeamPage from './Components/About/TeamPage';
 
 
 class App extends Component {
@@ -41,7 +45,6 @@ class App extends Component {
             console.log(response.data)
             if (response.data.user) {
                 console.log('Get User: There is a user saved in the server session: ')
-
                 this.setState({
                     loggedIn: true,
                     userId: response.data.user.id,
@@ -69,19 +72,24 @@ class App extends Component {
                 <div className="App">
                     <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
                     <div className='container'>
-                        <Route exact path='/' component={Login}/>
-                        <Route exact path='/register' component={Register}/>
-                        <Route exact path='/profile' component={Profile}/>
-                        <Route exact path='/addBook' component={AddBook}/>
-                        <Route exact path='/browseBook'
-                               render={() => <BrowseBook updateUser={this.updateUser} userId={this.state.userId}
-                                                         username={this.state.username}/>}
+                        <Route exact path='/register'
+                               render={() => <Register updateUser={this.updateUser}/>}
                         />
+                        <Route exact path='/'
+                               render={() => <Login updateUser={this.updateUser}/>}/>
                         <Route
                             path='/home'
                             render={() => <Home updateUser={this.updateUser} userId={this.state.userId}
                                                 username={this.state.username}/>}
                         />
+
+                        <Route exact path='/profile' component={Profile}/>
+                        <Route exact path='/addBook' component={AddBook}/>
+                        <Route exact path='/browseBook' component={BrowseBook}/>
+                        <Route exact path='/cart' component={CartItem}/>
+                        <Route exact path='/api-search' component={ExternalSearch}/>
+                        <Route exact path='/blog' component={Blog}/>
+                        <Route exact path='/about' component={TeamPage}/>
                     </div>
                 </div>
                 {this.redirect()}

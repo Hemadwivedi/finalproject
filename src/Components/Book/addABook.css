@@ -1,0 +1,161 @@
+body{
+    font-family: 'Muli', sans-serif;
+    color:  rgb(70,69,91);
+}
+
+.container-submit{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto; 
+    margin-left: auto;
+    width: 700px;
+    max-width: 100%;
+    margin: auto;
+    background-color: #fcfcfc;
+    height: 550px;
+    border-radius: 0.35em;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    margin-top: -50px;
+}
+
+
+.createcontent{
+    background-image: url("../../assets/upload.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.submit-btn{
+    padding: 17px 40px 16px 41px;
+    border-radius: 4px;
+    background-color: rgb(217, 165, 32);
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    line-height: 20px; 
+    margin-top: 16px;
+    margin-left: 50%;
+    width: 220px;
+    margin-left: -110px;
+    position: absolute;
+    left: 50%;
+}
+
+.submit-btn:hover{
+    color: white;
+}
+
+.rules{
+    margin: auto;
+    color: rgb(70,69,91);
+    font-size: 14px;
+}
+
+li{
+    font-size: 14px;
+    display: list-item;
+    text-align: left;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: goldenrod;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+
+.form-control{
+    min-height: 55px;
+    border: 0;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: #f4f4f4;
+    padding: 19px 25px 18px;
+    margin-bottom: 18px;
+}
+
+.form-control{
+    display: block;
+    width: 100%;
+    padding: 7px 12px;
+    font-size: 14px;
+    color: #cecece;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-radius: 4px;
+    margin-top: -7px;
+    margin-bottom: -10px;
+}
+
+.bookattr{
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.terms{
+  color: blue;
+}
+
+.terms:hover{
+  color: blue;
+}
+

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import AddBookFunction from './AddBookFunction';
-import { withRouter } from 'react-router-dom';
+import BookService from './BookService';
+import {withRouter} from 'react-router-dom';
+import './addABook.css'
 
 class AddBook extends Component {
 
@@ -12,14 +13,42 @@ class AddBook extends Component {
             price: "",
             description: "",
             jpegImg: ""
-        }
-        this.onChange = this.onChange.bind(this);
+        };
         this.onSubmit = this.onSubmit.bind(this);
+        this.getBookById = this.getBookById.bind(this);
+        this.getBookId = this.getBookId.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     onChange(e) {
         this.setState({[e.target.name]: e.target.value})
     }
+
+    componentDidMount = () => {
+        this.getBookById(this.getBookId())
+    };
+
+    getBookId = () => {
+        if (this.props.location.state) {
+            return this.props.location.state.bookId
+        }
+    };
+
+    getBookById = (bookId) => {
+        if (bookId) {
+            BookService.getBookById(bookId).then(response => {
+                console.log('book Recieved ')
+                this.setState({
+                    title: response.data.title,
+                    author: response.data.author,
+                    price: response.data.price,
+                    description: response.data.description,
+                    jpegImg: response.data.jpegImg,
+                })
+            })
+        }
+    };
+
 
     onSubmit(e) {
         e.preventDefault();
@@ -28,19 +57,29 @@ class AddBook extends Component {
             author: this.state.author,
             price: this.state.price,
             description: this.state.description,
-            jpegImg: this.state.jpegImg
+            jpegImg: this.state.jpegImg,
         };
-        AddBookFunction(book).then(response => {
+
+        const redirectToBrowsBook = response => {
             if (response) {
-                this.props.history.push('')
+                this.props.history.push('/browseBook')
             }
-        })
+        };
+
+        if (this.getBookId()) {
+            BookService.editBook(this.getBookId(), book)
+                .then(redirectToBrowsBook)
+        } else {
+            BookService.createBook(book)
+                .then(redirectToBrowsBook)
+        }
+
     }
 
     render() {
         return (
             <div className="createcontent">
-                <h5 className="rules">Before you submit your book, please read our <a href="#popup1">Terms and
+                <h5 className="rules">Before you submit your book, please read our <a href="#popup1" className="terms">Terms and
                     Conditions</a>!</h5>
                 <div id="popup1" className="overlay">
                     <div className="popup">
@@ -59,31 +98,35 @@ class AddBook extends Component {
                 <div className="container-submit">
                     <form method="post" action="/api/book/create" className="submitcont">
                         <div className="form-group">
-                            <label htmlFor="formGroupExampleInput">Book Title</label>
-                            <input type="text" className="form-control" placeholder="Enter book title" name="title"/>
+                            <label className="bookattr" style={{textAlign: "c"}} htmlFor="formGroupExampleInput">Book
+                                Title</label>
+                            <input type="text" className="form-control" placeholder="Enter book title" name="title"
+                                   value={this.state.title} onChange={this.onChange}/>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="formGroupExampleInput">Author</label>
+                            <label className="bookattr" htmlFor="formGroupExampleInput">Author</label>
                             <input type="text" className="form-control" placeholder="Enter the book's author"
-                                   name="author"/>
+                                   name="author" value={this.state.author} onChange={this.onChange}/>
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="formGroupExampleInput">Price</label>
+                            <label className="bookattr" htmlFor="formGroupExampleInput">Price</label>
                             <input type="number" min="5.00" max="100.00" step="0.01" className="form-control"
-                                   placeholder="5.00" name="price"/>
+                                   placeholder="5.00" name="price"
+                                   value={this.state.price} onChange={this.onChange}/>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="formGroupExampleInput">Description</label>
+                            <label className="bookattr" htmlFor="formGroupExampleInput">Description</label>
                             <input type="text" className="form-control" placeholder="Enter a brief description"
-                                   name="description"/>
+                                   name="description" value={this.state.description} onChange={this.onChange}/>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="formGroupExampleInput">Book Cover</label>
+                            <label className="bookattr" htmlFor="formGroupExampleInput">Book Cover</label>
                             <input type="text" className="form-control" placeholder="Submit the cover URL"
-                                   name="jpegImg"/>
+                                   name="jpegImg" value={this.state.jpegImg} onChange={this.onChange}/>
                         </div>
-                        <input name="submit" type="submit" className="btn submit-btn" value="Submit your book"/>
+                        <input name="submit" type="submit" className="btn submit-btn" value="Submit your book"
+                               onClick={this.onSubmit}/>
                     </form>
                     <span className="todo-container">
 			</span>

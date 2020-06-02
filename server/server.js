@@ -34,11 +34,13 @@ const loginRouts = require("./routes/login-routes");
 const bookRoutes = require("./routes/book-routes");
 const userRoutes = require("./routes/user-routes");
 const cartRoutes = require("./routes/cart-routes");
+const blogCommentRoute = require("./routes/blog-comment-route");
 
 app.use(loginRouts);
 app.use('/api/user', userRoutes);
 app.use('/api/book', bookRoutes);
 app.use('/api/cart', cartRoutes);
+app.use('/api/blog/', blogCommentRoute);
 
 //Here is association (relation)
 const db = require("./models");
