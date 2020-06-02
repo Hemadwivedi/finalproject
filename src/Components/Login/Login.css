@@ -58,7 +58,7 @@ body{
     padding: 20px;
 }
 
-.form-control{
+.form-control1{
     min-height: 55px;
     border: 0;
     border-radius: 4px;
@@ -66,9 +66,10 @@ body{
     background-color: #f4f4f4;
     padding: 19px 25px 18px;
     margin-bottom: 10px;
+    width: 340px;
 }
 
-.login-btn{
+.login-btnn{
     padding: 17px 40px 16px 41px;
     border-radius: 4px;
     background-color: goldenrod;
@@ -76,9 +77,11 @@ body{
     font-weight: bold;
     color: white;
     line-height: 20px;
+    margin-top: 10px;
+    margin-left: 0.5px;
 }
 
-.login-btn:hover{
+.login-btnn:hover{
     color: white;
 }
 
@@ -111,16 +114,22 @@ body{
     color: rgb(63,61,86);
 }
 
-h1{
+.intro-title{
     margin: 50px 50px;
     margin-top: -10px;
     margin-bottom: 10px;
     font-size: 30px;  
     padding: 20px;
 }
+
 .intro-text{
     margin-bottom: -10px;
     color: rgb(63,61,86);
+}
+
+.signtext{
+    font-size: 26px;
+    margin-top: -5px;
 }
 
 .logotext{
@@ -161,4 +170,12 @@ p{
     color: rgb(63,61,86);
     margin-left: -8px;
     margin-top: -40px;
+}
+
+.signuphere{
+    color: blue;
+}
+
+.signuphere:hover{
+    color: blue;
 }
