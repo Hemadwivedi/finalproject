@@ -15,7 +15,6 @@ const cartItem = (props) => {
                 </div>
             </div>
         )
-    )
 };
 
 export default cartItem;
