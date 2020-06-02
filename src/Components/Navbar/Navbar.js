@@ -56,6 +56,9 @@ class Navbar extends Component {
                                         <Link to="/cart">
                                             <span className="navlinks">Cart</span>
                                         </Link>
+                                        <Link to="/blog">
+                                            <span className="navlinks">Blog</span>
+                                        </Link>
 
                                         <Link to="/about">
                                             <span className="navlinks">About</span>
