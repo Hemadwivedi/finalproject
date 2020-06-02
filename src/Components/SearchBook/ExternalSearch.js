@@ -48,7 +48,7 @@ class ExternalSearch extends Component {
                 return book;
             })
             .map(book => {
-                return (<div className="allbooksdisplayed">
+                return (
                     <div className="card-deck">
                         <div className="card">
                             <img className="card-img-top" src={book.thumbnail} alt=""/>
@@ -60,16 +60,17 @@ class ExternalSearch extends Component {
                             </div>
                         </div>
                     </div>
-                </div>)
+                )
 
             });
+            
     };
 
     render() {
         return (
             <div className="apicontent">
                 <div className="imagesearch">
-                    <img className="apiimage"/>
+                    
                 </div>
                 <div className="search">
                     <form id="myform">
@@ -84,7 +85,7 @@ class ExternalSearch extends Component {
                         </button>
                     </form>
                 </div>
-                <div className="results">
+                <div className="allbooksdisplayed">
                     {this.renderBooks()}
                 </div>
             </div>
