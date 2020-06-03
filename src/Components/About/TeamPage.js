@@ -32,40 +32,40 @@ const TeamPage = () => {
                     <h1>Contributors</h1>
                     <hr/>
                     <div className="row">
-                        <div className="col-lg-4">
+                        <div className="col-lg-3">
                             {/* <img className="rounded-circle" src=""
                                  alt="Generic placeholder image"
                                  width="140"
                                  height="140"/> */}
-                            <h2>Ekaterina Blagoeva</h2>
+                            <h2 className="ournames">Ekaterina Blagoeva</h2>
                             <p>I am interested in books about evolution, neuroscience,
-                            astrophysics, religion and biology. 
+                            astrophysics, religion and biology. I am currently reading god is not great by Christopher Hitchens.
                             </p>
                         </div>
-                        <div className="col-lg-4">
+                        <div className="col-lg-3">
                             {/* <img className="rounded-circle" src="../../assets/hema.jpg"
                                  alt="Generic placeholder image"
                                  width="140"
                                  height="140"/> */}
-                            <h2 className="p-1">Hema Dwivedi</h2>
-                            <p className="p-3"> I am a romantic person and I love reading romantic novels.
+                            <h2 className="ournames">Hema Dwivedi</h2>
+                            <p className="p-3"> I am a romantic person and I love reading romantic novels. One of my favorite books is Can love happen twice by Ravinder Singh.
                             </p>
                         </div>
-                        <div className="col-lg-4">
+                        <div className="col-lg-3">
                             {/* <img className="rounded-circle" src="../../assets/shirley.jpg"
                                  alt="Generic placeholder image"
                                  width="140"
                                  height="140"/> */}
-                            <h2>Shirley Rivera</h2>
+                            <h2 className="ournames">Shirley Rivera</h2>
                             <p>I always enjoyed thriller books. I love the sense of mystery and suspense they give me! </p>
                         </div>
-                        <div className="col-lg-4">
+                        <div className="col-lg-3">
                             {/* <img className="rounded-circle" src="../../assets/madel.png"
                                  alt="Generic placeholder image"
                                  width="140"
                                  height="140"/> */}
-                            <h2>Madel</h2>
-                            <p>I love the thriller genre books.</p>
+                            <h2 className="ournames">Madel</h2>
+                            <p>I have always been fascinated with existential literature because it challenges us to ponder the fragility of human existence . One of my favorite existential pieces is The Metamorphosis by Franz Kafka.</p>
                         </div>
                     </div>
                 </div>
