@@ -25,6 +25,10 @@
     margin-left: 1px;
 }
 
+.btn-submcom:hover{
+    color: white;
+}
+
 .badge-success{
     background-color: rgb(217, 165, 32);
 }
