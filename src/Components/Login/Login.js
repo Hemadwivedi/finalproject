@@ -4,11 +4,12 @@ import './Login.css'
 
 
 class LogIn extends Component{
+    _isMounted = false;
     constructor(props){
         super(props);
         this.state={
-            username:null,
-            password:null
+            username:' ',
+            password:' '
         };
         this.onChange=this.onChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
@@ -24,17 +25,23 @@ class LogIn extends Component{
           password:this.state.password
       };
       login(user).then(res=>{
+          this._isMounted = true;
        if(res){
            this.props.updateUser({
                loggedIn: true,
                userId: res.id,
                username: res.username
            });
-           this.setState({
-               redirectTo: '/home'
-           })
+           if(this._isMounted) {
+               this.setState({
+                   redirectTo: '/home'
+               })
+           }
        }
       })
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     render(){
