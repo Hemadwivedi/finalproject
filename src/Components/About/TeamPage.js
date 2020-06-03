@@ -57,7 +57,7 @@ const TeamPage = () => {
                                  width="140"
                                  height="140"/> */}
                             <h2 className="ournames">Shirley Rivera</h2>
-                            <p>I always enjoyed thriller books. I love the sense of mystery and suspense they give me! </p>
+                            <p>I always enjoyed thriller books. I love the sense of mystery and suspense they give me! My favorite book is The girl with the dragon tattoo by Stieg Larsson and I am currently reading The react handbook. </p>
                         </div>
                         <div className="col-lg-3">
                             {/* <img className="rounded-circle" src="../../assets/madel.png"
