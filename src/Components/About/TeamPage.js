@@ -16,7 +16,7 @@ const TeamPage = () => {
                                 love different music, food and books. But we have something that unites us all,
                                 it is our desire to bring all book lovers together.
                             </p>
-                            <p className="aboutus">Trough our website we are aiming to connect you with the literature you have come to love, 
+                            <p className="aboutus">Through our website we are aiming to connect you with the literature you have come to love, 
                             or help you find your new favorite book! 
                             </p>
                             <p className="aboutus">BookToShare also provides a platform to sell your old books to a whole new generation of bibliophiles.
@@ -64,7 +64,7 @@ const TeamPage = () => {
                                  alt="Generic placeholder image"
                                  width="140"
                                  height="140"/> */}
-                            <h2 className="ournames">Madel</h2>
+                            <h2 className="ournames">Madel Liquido</h2>
                             <p>I have always been fascinated with existential literature because it challenges us to ponder the fragility of human existence . One of my favorite existential pieces is The Metamorphosis by Franz Kafka.</p>
                         </div>
                     </div>
