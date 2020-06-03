@@ -1,0 +1,7 @@
+.imageandwelcome1{
+    background-image: url("../../assets/blogpage.png");
+    background-size: cover;
+    background-position: center;
+    width:350px;
+    height: 300px;
+}

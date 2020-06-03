@@ -49,17 +49,9 @@ class Blog extends Component {
         console.log('THIS IS OUR STATE', this.state)
         const loadingSpin = this.state.loading ? "App-logo Spin" : "App-logo";
         return (
-            <div className="App container bg-light shadow">
-                <header className="App-header">
-
-                    <h1 className="App-title">
-                        Book Comments
-                        <span className="px-2" role="img" aria-label="Chat">
-              💬
-            </span>
-                    </h1>
-
-                </header>
+            <div className="blogcontent">
+                <div className="imageandwelcome">
+                    </div>
 
                 <div className="row">
                     <div className="col-4  pt-3 border-right">
