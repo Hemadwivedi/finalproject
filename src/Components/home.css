@@ -79,3 +79,11 @@
 .contsection{
     background-color: rgb(70,69,91);
 }
+
+hr{
+    background-color: rgb(217, 165, 32);
+}
+
+.imagesus{
+    background-image: url("../assets/shirley.jpg");
+}

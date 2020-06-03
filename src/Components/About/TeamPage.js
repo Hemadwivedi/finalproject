@@ -16,11 +16,11 @@ const TeamPage = () => {
                                 love different music, food and books. But we have something that unites us all,
                                 it is our desire to bring all book lovers together.
                             </p>
-                            <p className="aboutus">Trough our website we are aiming to 
+                            <p className="aboutus">Trough our website we are aiming to connect you with the literature you have come to love, 
+                            or help you find your new favorite book! 
                             </p>
-                            <p className="aboutus">And with all this data in mind, we created the project Live Happy. With it we are
-                                bringing to you positive,
-                                uplifting and funny content, that is meant to relieve you from your daily stress.
+                            <p className="aboutus">BookToShare also provides a platform to sell your old books to a whole new generation of bibliophiles.
+                            Whatever your unique tastes, you are sure to find something here!
                             </p>
                         </div>
                         
@@ -33,39 +33,39 @@ const TeamPage = () => {
                     <hr/>
                     <div className="row">
                         <div className="col-lg-4">
-                            <img className="rounded-circle" src="../../assets/eti.jpg"
+                            {/* <img className="rounded-circle" src=""
                                  alt="Generic placeholder image"
                                  width="140"
-                                 height="140"/>
+                                 height="140"/> */}
                             <h2>Ekaterina Blagoeva</h2>
                             <p>I am interested in books about evolution, neuroscience,
                             astrophysics, religion and biology. 
                             </p>
                         </div>
                         <div className="col-lg-4">
-                            <img className="rounded-circle" src="../../assets/hema.jpg"
+                            {/* <img className="rounded-circle" src="../../assets/hema.jpg"
                                  alt="Generic placeholder image"
                                  width="140"
-                                 height="140"/>
+                                 height="140"/> */}
                             <h2 className="p-1">Hema Dwivedi</h2>
                             <p className="p-3"> I am a romantic person and I love reading romantic novels.
                             </p>
                         </div>
                         <div className="col-lg-4">
-                            <img className="rounded-circle" src="../../assets/shirley.jpg"
+                            {/* <img className="rounded-circle" src="../../assets/shirley.jpg"
                                  alt="Generic placeholder image"
                                  width="140"
-                                 height="140"/>
+                                 height="140"/> */}
                             <h2>Shirley Rivera</h2>
                             <p>I always enjoyed thriller books. I love the sense of mystery and suspense they give me! </p>
                         </div>
                         <div className="col-lg-4">
-                            <img className="rounded-circle" src="../../assets/madel.png"
+                            {/* <img className="rounded-circle" src="../../assets/madel.png"
                                  alt="Generic placeholder image"
                                  width="140"
-                                 height="140"/>
+                                 height="140"/> */}
                             <h2>Madel</h2>
-                            <p>wwwwwwww </p>
+                            <p>I love the thriller genre books.</p>
                         </div>
                     </div>
                 </div>
