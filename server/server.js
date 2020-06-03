@@ -48,6 +48,9 @@ const db = require("./models");
 db.User.hasMany(db.Book);
 db.Book.belongsTo(db.User, {constraints: true, onDelete: 'CASCADE'});
 
+
+
+
 // one user will have only one cart
 db.User.hasOne(db.Cart);
 db.Cart.belongsTo(db.User);
