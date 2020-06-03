@@ -41,13 +41,8 @@ body{
     font-size: 17px;
     font-weight: bold;
     color: white;
-    line-height: 20px; 
-    margin-top: 16px;
-    margin-left: 50%;
-    width: 220px;
-    margin-left: -110px;
-    position: absolute;
-    left: 50%;
+    margin-left: 200px;
+    margin-top: 11px;
 }
 
 .submit-btnn:hover{
