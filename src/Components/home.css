@@ -6,6 +6,34 @@
     height: 300px;
 }
 
+.imageblog{
+    background-image: url("../assets/blogpage.png");
+    background-size: cover;
+    background-position: center;
+    width:350px;
+    height: 300px;
+    margin: auto;
+}
+
+.btn-submcom{
+    padding: 17px 40px 16px 41px;
+    border-radius: 4px;
+    background-color: rgb(217, 165, 32);
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    margin-left: 1px;
+}
+
+.badge-success{
+    background-color: rgb(217, 165, 32);
+}
+
+.posthere{
+    color: rgb(70,69,91);
+    margin-bottom: 20px;
+}
+
 .welcometext, .member-name{
     color: rgb(70,69,91);
     text-align: center;
