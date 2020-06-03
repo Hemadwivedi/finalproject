@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-import React, {Component} from "react";
-import './Book.css'
-=======
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import "./browsBook.css"
 import Book from './Book';
 import BookService from "./BookService";
 import CartService from "../Cart/CartService";
->>>>>>> 91b644abce05f9e3338a36604e199ae0459f9065
 
 
 class BrowseBook extends Component {
