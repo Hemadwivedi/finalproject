@@ -3,37 +3,31 @@ import React from "react";
 const TeamPage = () => {
     return (
         <div>
-            <section id="about" className="py-3">
+            <section id="about" className="py-3 aboutsection">
                 <div className="container">
+                <div className="imageus">
+                    </div>
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-12">
                             <h1 className="greettxt">About Us</h1>
                             <br/>
                             <p className="aboutus">We are all very different. We were born in different continents, at
                                 different times,
-                                love different music, food and movies. But we have something that unites us all,
-                                it is our desire to bring happiness to people wherever we go.
+                                love different music, food and books. But we have something that unites us all,
+                                it is our desire to bring all book lovers together.
                             </p>
-                            <p>We did our research and we've found that 75% of Americans experience moderate to high
-                                stress levels each
-                                month.
-                                73% of people have stress that impacts their mental health and 48% of people have
-                                trouble sleeping because of
-                                stress.
+                            <p className="aboutus">Trough our website we are aiming to 
                             </p>
-                            <p>And with all this data in mind, we created the project Live Happy. With it we are
+                            <p className="aboutus">And with all this data in mind, we created the project Live Happy. With it we are
                                 bringing to you positive,
                                 uplifting and funny content, that is meant to relieve you from your daily stress.
                             </p>
                         </div>
-                        <div className="col-md-6">
-                            <img src="https://source.unsplash.com/random/700x700/?computers" alt=""
-                                 className="img-fluid rounded-circle d-none d-md-block about-img"/>
-                        </div>
+                        
                     </div>
                 </div>
             </section>
-            <section id="staff" className="py-5 text-center bg-dark text-white">
+            <section id="staff" className="py-5 text-center text-white contsection">
                 <div className="container">
                     <h1>Contributors</h1>
                     <hr/>
@@ -44,11 +38,9 @@ const TeamPage = () => {
                                  width="140"
                                  height="140"/>
                             <h2>Ekaterina Blagoeva</h2>
-                            <p>Born and raised in Bulgaria. Interests include fishing, gaming, gardening. My way
-                                of
-                                dealing with stress is
-                                gaming, listening to bulgarian music and talking about my problems with my
-                                family.</p>
+                            <p>I am interested in books about evolution, neuroscience,
+                            astrophysics, religion and biology. 
+                            </p>
                         </div>
                         <div className="col-lg-4">
                             <img className="rounded-circle" src="../../assets/hema.jpg"
@@ -56,9 +48,7 @@ const TeamPage = () => {
                                  width="140"
                                  height="140"/>
                             <h2 className="p-1">Hema Dwivedi</h2>
-                            <p className="p-3"> I belong to India.My hobby is singing,raeading books,and visit
-                                new
-                                places.
+                            <p className="p-3"> I am a romantic person and I love reading romantic novels.
                             </p>
                         </div>
                         <div className="col-lg-4">
@@ -67,12 +57,7 @@ const TeamPage = () => {
                                  width="140"
                                  height="140"/>
                             <h2>Shirley Rivera</h2>
-                            <p>A native Jersey girl with roots in the NYC that wants to make things that make a
-                                difference. I love white
-                                sandy beaches and going out with friends. I deal with stress by dancing, working
-                                out and
-                                listening to good
-                                music. </p>
+                            <p>I always enjoyed thriller books. I love the sense of mystery and suspense they give me! </p>
                         </div>
                         <div className="col-lg-4">
                             <img className="rounded-circle" src="../../assets/madel.png"
@@ -80,12 +65,7 @@ const TeamPage = () => {
                                  width="140"
                                  height="140"/>
                             <h2>Madel</h2>
-                            <p>A native Jersey girl with roots in the NYC that wants to make things that make a
-                                difference. I love white
-                                sandy beaches and going out with friends. I deal with stress by dancing, working
-                                out and
-                                listening to good
-                                music. </p>
+                            <p>wwwwwwww </p>
                         </div>
                     </div>
                 </div>
