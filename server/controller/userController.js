@@ -43,7 +43,6 @@ exports.editUser = (req, res, next) => {
         username: req.body.username,
         password: req.body.password,
         email:req.body.email
-
     };
     const selector = {
         where: {id: req.params.userId}

@@ -77,7 +77,7 @@ class App extends Component {
                                render={() => <Login updateUser={this.updateUser}/>}/>
                         <Route
                             path='/home'
-                            render={() => <Home username={this.state.user.username}/>}
+                            render={() => <Home username={this.state.user.firstname}/>}
                         />
 
                         <Route exact path='/profile'

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link, Redirect, withRouter} from 'react-router-dom';
 import axios from 'axios';
 import './Navbar.css'
 
@@ -10,18 +10,18 @@ class Navbar extends Component {
         this.logout = this.logout.bind(this);
     }
 
-    logout=()=>{
-        axios.get('/api/logout').then(response=> {
-            this.props.updateUser({loggedIn:false})
+    logout = () => {
+        axios.get('/api/logout').then(response => {
+            this.props.updateUser({loggedIn: false})
         })
     }
 
 
     render() {
         const loggedIn = this.props.loggedIn;
-
-        if(!loggedIn){
-            return <Redirect to="/" push={true}/>;
+        if (!loggedIn) {
+            if (this.props.location.pathname !== "/register")
+                return <Redirect to="/" push={true}/>;
         }
         return (
             <div>
@@ -50,8 +50,8 @@ class Navbar extends Component {
                                             <span className="navlinks">About</span>
                                         </Link>
 
-                                        <Link onClick={this.logout} >
-                                            <span className="navlinks" >Logout</span></Link>
+                                        <Link onClick={this.logout}>
+                                            <span className="navlinks">Logout</span></Link>
                                     </section>) :
                                 (
                                     <section>
@@ -67,5 +67,5 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default withRouter(Navbar)
 
