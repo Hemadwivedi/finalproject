@@ -33,7 +33,7 @@ class Navbar extends Component {
                                         <Link to="/home">
                                             <span className="navlinks">Home</span>
                                         </Link>
-                                        <Link to="/register">
+                                        <Link to="/profile">
                                             <span className="navlinks">Profile</span>
                                         </Link>
                                         <Link to="/browseBook">

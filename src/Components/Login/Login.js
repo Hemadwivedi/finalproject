@@ -29,8 +29,7 @@ class LogIn extends Component{
        if(res){
            this.props.updateUser({
                loggedIn: true,
-               userId: res.id,
-               username: res.username
+               user: res
            });
            if(this._isMounted) {
                this.setState({

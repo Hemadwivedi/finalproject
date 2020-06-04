@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import Home from './Components/home';
-import Profile from './Components/User/Profile';
+import Profile from './Components/Profile/Profile';
 import AddBook from './Components/Book/AddBook';
 import BrowseBook from './Components/Book/BrowseBook';
 import CartItem from "./Components/Cart/Cart";
@@ -22,8 +22,7 @@ class App extends Component {
         super(props);
         this.state = {
             loggedIn: false,
-            userId: null,
-            username: null
+            user:{},
         }
 
         this.getUser = this.getUser.bind(this)
@@ -47,14 +46,13 @@ class App extends Component {
                 console.log('Get User: There is a user saved in the server session: ')
                 this.setState({
                     loggedIn: true,
-                    userId: response.data.user.id,
-                    username: response.data.user.username
+                    user: response.data.user
                 })
             } else {
                 console.log('Get user: no user');
                 this.setState({
                     loggedIn: false,
-                    user: null
+                    user: {}
                 })
             }
         })
@@ -79,11 +77,12 @@ class App extends Component {
                                render={() => <Login updateUser={this.updateUser}/>}/>
                         <Route
                             path='/home'
-                            render={() => <Home updateUser={this.updateUser} userId={this.state.userId}
-                                                username={this.state.username}/>}
+                            render={() => <Home username={this.state.user.username}/>}
                         />
 
-                        <Route exact path='/profile' component={Profile}/>
+                        <Route exact path='/profile'
+                               render={() => <Profile user={this.state.user} updateUser={this.updateUser}/>}/>
+
                         <Route exact path='/addBook' component={AddBook}/>
                         <Route exact path='/browseBook' component={BrowseBook}/>
                         <Route exact path='/cart' component={CartItem}/>
