@@ -9,7 +9,8 @@ class Profile extends Component {
             lastname: props.user.lastname,
             username: props.user.username,
             password: props.user.password,
-            email: props.user.email
+            email: props.user.email,
+            id : props.user.id
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -26,14 +27,20 @@ class Profile extends Component {
             lastname: this.state.lastname,
             username: this.state.username,
             password: this.state.password,
-            email: this.state.email
+            email: this.state.email,
+            id : this.props.user.id
+
         };
+        console.log(user)
         axios.post(`/api/user/${this.props.user.id}`, user)
             .then(response => {
+
                 this.props.updateUser({
                     loggedIn: true,
                     user: user,
-                })
+                });
+
+                window.location.pathname = "/home"
             })
     }
 
