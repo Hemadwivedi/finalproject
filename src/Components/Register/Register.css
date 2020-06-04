@@ -23,6 +23,7 @@ body{
     font-weight: bold;
     color: white;
     line-height: 20px;
+    margin-top: -12px;
 }
 
 .signup-btn:hover{
@@ -52,4 +53,5 @@ body{
 
 .login-title{
     padding-bottom: 10px;
+    font-size: 20px;
 }
