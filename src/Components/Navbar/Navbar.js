@@ -43,7 +43,7 @@ class Navbar extends Component {
                                             <span className="navlinks">Cart</span>
                                         </Link>
                                         <Link to="/blog">
-                                            <span className="navlinks">Blog</span>
+                                            <span className="navlinks">Forum</span>
                                         </Link>
 
                                         <Link to="/about">
