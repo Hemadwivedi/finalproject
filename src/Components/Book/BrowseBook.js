@@ -55,6 +55,7 @@ class BrowseBook extends Component {
                       price={book.price}
                       isNotOwn={book.isNotOwn}
                       bookId={book.id}
+                      key={book.id}
                       addToCart={() => this.addToCart(book.id)}
                 />)
         });

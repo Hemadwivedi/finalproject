@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './cartItem.css'
 
 const removeItem = (props) => {
     return (

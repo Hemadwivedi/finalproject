@@ -20,13 +20,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //TODO delete later now dont want to login every time
-/*app.use((req, res, next) => {
+app.use((req, res, next) => {
     db.User.findByPk(3)
         .then(user => {
             req.user = user.dataValues;
             next();
         }).catch(e => console.log(`error ${e}`));
-});*/
+});
 
 //routing
 
@@ -47,6 +47,9 @@ const db = require("./models");
 // one user can have many book
 db.User.hasMany(db.Book);
 db.Book.belongsTo(db.User, {constraints: true, onDelete: 'CASCADE'});
+
+
+
 
 // one user will have only one cart
 db.User.hasOne(db.Cart);

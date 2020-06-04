@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
 import './Navbar.css'
 
@@ -7,36 +7,22 @@ import './Navbar.css'
 class Navbar extends Component {
     constructor(props) {
         super(props);
-        this.state= {}
         this.logout = this.logout.bind(this);
     }
-    onSubmit(e){
-        e.preventDefault();
 
-        axios.get('/api/logout').then(res=>{
-            if(res){
-                this.setState({
-                    redirectTo: '/'
-                })
-            }
-        })
-    }
-
-    logout(event) {
-        event.preventDefault();
+    logout=()=>{
         axios.get('/api/logout').then(response=> {
-
-                this.props.history.push('/');
-
-        } )
+            this.props.updateUser({loggedIn:false})
+        })
     }
 
 
     render() {
         const loggedIn = this.props.loggedIn;
-        console.log('navbar render, props: ');
-        console.log(this.props);
 
+        if(!loggedIn){
+            return <Redirect to="/" push={true}/>;
+        }
         return (
             <div>
                 <header>
@@ -47,7 +33,7 @@ class Navbar extends Component {
                                         <Link to="/home">
                                             <span className="navlinks">Home</span>
                                         </Link>
-                                        <Link to="/register">
+                                        <Link to="/profile">
                                             <span className="navlinks">Profile</span>
                                         </Link>
                                         <Link to="/browseBook">
@@ -57,15 +43,15 @@ class Navbar extends Component {
                                             <span className="navlinks">Cart</span>
                                         </Link>
                                         <Link to="/blog">
-                                            <span className="navlinks">Blog</span>
+                                            <span className="navlinks">Forum</span>
                                         </Link>
 
                                         <Link to="/about">
                                             <span className="navlinks">About</span>
                                         </Link>
 
-                                        <Link onClick={this.onSubmit}>
-                                            <span className="navlinks">Logout</span></Link>
+                                        <Link onClick={this.logout} >
+                                            <span className="navlinks" >Logout</span></Link>
                                     </section>) :
                                 (
                                     <section>

@@ -46,7 +46,9 @@ class Cart extends Component {
                               author={book.author}
                               description={book.description}
                               price={book.price}
+                              key={book.id}
                               deleteFromCart={(event) => this.deleteFromCart(event, book.id)}
+
             />)
         })
     };

@@ -125,7 +125,7 @@ class AddBook extends Component {
                             <input type="text" className="form-control" placeholder="Submit the cover URL"
                                    name="jpegImg" value={this.state.jpegImg} onChange={this.onChange}/>
                         </div>
-                        <input name="submit" type="submit" className="btn submit-btn" value="Submit your book"
+                        <input name="submit" type="submit" className="btn submit-btnn" value="Submit your book"
                                onClick={this.onSubmit}/>
                     </form>
                     <span className="todo-container">

@@ -21,7 +21,18 @@ module.exports = function(sequelize, DataTypes) {
     lastname: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: {
+          msg: "Must be a valid email address",
+        }
+      }
     }
+
   });
   
   User.prototype.validPassword = function(password) {

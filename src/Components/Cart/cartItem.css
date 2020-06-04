@@ -378,7 +378,7 @@ body{
     margin-left: 20px;
 }
 
-.submit-btn{
+.deleteFromCart{
     padding: 17px 40px 16px 41px;
     border-radius: 4px;
     background-color: rgb(217, 165, 32);
@@ -387,4 +387,5 @@ body{
     color: white;
     line-height: 20px;
     width: 200px;
+    margin-left: -20px;
 }

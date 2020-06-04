@@ -4,11 +4,12 @@ import './Login.css'
 
 
 class LogIn extends Component{
+    _isMounted = false;
     constructor(props){
         super(props);
         this.state={
-            username:null,
-            password:null
+            username:' ',
+            password:' '
         };
         this.onChange=this.onChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
@@ -24,17 +25,22 @@ class LogIn extends Component{
           password:this.state.password
       };
       login(user).then(res=>{
+          this._isMounted = true;
        if(res){
            this.props.updateUser({
                loggedIn: true,
-               userId: res.id,
-               username: res.username
+               user: res
            });
-           this.setState({
-               redirectTo: '/home'
-           })
+           if(this._isMounted) {
+               this.setState({
+                   redirectTo: '/home'
+               })
+           }
        }
       })
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     render(){
@@ -51,17 +57,17 @@ class LogIn extends Component{
             </div>
                         <div className="login-wrapper">
                         <form onSubmit={this.onSubmit}>
-                           <h1>Sign In</h1>
+                           <h1 className="signtext">Sign In</h1>
                            <div>
-                               <input className="form-control" type='username' name='username' placeholder='Enter Username' value={this.state.username}
+                               <input className="form-control1" type='username' name='username' placeholder='Enter Username' value={this.state.username}
                                       onChange={this.onChange}/>
                            </div>
                            <div>
-                               <input className="form-control" type='password' name='password' placeholder='Enter Password' value={this.state.password}
+                               <input className="form-control1" type='password' name='password' placeholder='Enter Password' value={this.state.password}
                                       onChange={this.onChange}/>
                            </div>
-                           <button className="btn btn-default login-btn" type='submit'> Sign In</button>
-                           <p className="login-wrapper-signup-text">New to this website? <a href="/register">Signup
+                           <button className="btn btn-default login-btnn" type='submit'> Sign In</button>
+                           <p className="login-wrapper-signup-text">New to this website? <a href="/register" className="signuphere">Signup
                                here</a></p>
                        </form>
                        </div>

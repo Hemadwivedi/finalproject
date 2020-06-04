@@ -34,23 +34,18 @@ body{
     flex-direction: column;
 }
 
-.submit-btn{
+.submit-btnn{
     padding: 17px 40px 16px 41px;
     border-radius: 4px;
     background-color: rgb(217, 165, 32);
     font-size: 17px;
     font-weight: bold;
     color: white;
-    line-height: 20px; 
-    margin-top: 16px;
-    margin-left: 50%;
-    width: 220px;
-    margin-left: -110px;
-    position: absolute;
-    left: 50%;
+    margin-left: 200px;
+    margin-top: 11px;
 }
 
-.submit-btn:hover{
+.submit-btnn:hover{
     color: white;
 }
 

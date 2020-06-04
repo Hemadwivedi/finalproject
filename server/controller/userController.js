@@ -5,7 +5,8 @@ exports.createUser = (req, res, next) => {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        email:req.body.email
     }).then(response=>
         response.dataValues
 
@@ -41,6 +42,7 @@ exports.editUser = (req, res, next) => {
         lastname: req.body.lastname,
         username: req.body.username,
         password: req.body.password,
+        email:req.body.email
 
     };
     const selector = {
