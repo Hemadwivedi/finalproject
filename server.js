@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 // for loging
-const passport = require("./config/passport");
+const passport = require("./server/config/passport");
 const session = require("express-session");
 app.use(session({secret: "hemashirleyeti", resave: true, saveUninitialized: true}));
 app.use(passport.initialize());
@@ -30,11 +30,11 @@ app.use(passport.session());
 
 //routing
 
-const loginRouts = require("./routes/login-routes");
-const bookRoutes = require("./routes/book-routes");
-const userRoutes = require("./routes/user-routes");
-const cartRoutes = require("./routes/cart-routes");
-const blogCommentRoute = require("./routes/blog-comment-route");
+const loginRouts = require("./server/routes/login-routes");
+const bookRoutes = require("./server/routes/book-routes");
+const userRoutes = require("./server/routes/user-routes");
+const cartRoutes = require("./server/routes/cart-routes");
+const blogCommentRoute = require("./server/routes/blog-comment-route");
 
 app.use(loginRouts);
 app.use('/api/user', userRoutes);
@@ -43,7 +43,7 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/blog/', blogCommentRoute);
 
 //Here is association (relation)
-const db = require("./models");
+const db = require("./server/models");
 // one user can have many book
 db.User.hasMany(db.Book);
 db.Book.belongsTo(db.User, {constraints: true, onDelete: 'CASCADE'});
