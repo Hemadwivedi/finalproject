@@ -61,6 +61,9 @@ db.Cart.belongsToMany(db.Book, {through: db.CartItem});
 // one book can belong to many cart
 db.Book.belongsToMany(db.Cart, {through: db.CartItem});
 
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 //Server start
 const PORT = process.env.PORT || 8080;
